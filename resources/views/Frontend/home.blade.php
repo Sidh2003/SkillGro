@@ -30,7 +30,7 @@
                             <p data-aos="fade-right" data-aos-delay="600">Every teaching and learning journey is
                                 unique Following We'll help guide your way.</p>
                             <div class="banner__btn-wrap" data-aos="fade-right" data-aos-delay="800">
-                                <a href="contact.html" class="btn arrow-btn">Start Free Trial <img
+                                <a href="#0" class="btn arrow-btn">Start Free Trial <img
                                         src="/frontend/assets/img/icons/right_arrow.svg" alt="img"
                                         class="injectable"></a>
                             </div>
@@ -91,7 +91,7 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="categories__item">
-                                            <a href="courses.html">
+                                            <a href="#0">
                                                 <div class="icon">
                                                     <i class="flaticon-graphic-design"></i>
                                                 </div>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="categories__item">
-                                            <a href="courses.html">
+                                            <a href="#0">
                                                 <div class="icon">
                                                     <i class="flaticon-investment"></i>
                                                 </div>
@@ -113,7 +113,7 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="categories__item">
-                                            <a href="courses.html">
+                                            <a href="#0">
                                                 <div class="icon">
                                                     <i class="flaticon-coding"></i>
                                                 </div>
@@ -124,7 +124,7 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="categories__item">
-                                            <a href="courses.html">
+                                            <a href="#0">
                                                 <div class="icon">
                                                     <i class="flaticon-email"></i>
                                                 </div>
@@ -135,7 +135,7 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="categories__item">
-                                            <a href="courses.html">
+                                            <a href="#0">
                                                 <div class="icon">
                                                     <i class="flaticon-fashion"></i>
                                                 </div>
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="categories__item">
-                                            <a href="courses.html">
+                                            <a href="#0">
                                                 <div class="icon">
                                                     <i class="flaticon-interaction"></i>
                                                 </div>
@@ -157,7 +157,7 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="categories__item">
-                                            <a href="courses.html">
+                                            <a href="#0">
                                                 <div class="icon">
                                                     <i class="flaticon-web-design"></i>
                                                 </div>
@@ -245,13 +245,7 @@
                             <img src="/frontend/assets/img/others/about_img.png" alt="img" class="main-img">
                             <img src="/frontend/assets/img/others/about_shape.svg" alt="img"
                                 class="shape alltuchtopdown">
-                            <a href="https://www.youtube.com/watch?v=b2Az7_lLh3g" class="popup-video">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="28"
-                                    viewBox="0 0 22 28" fill="none">
-                                    <path
-                                        d="M0.19043 26.3132V1.69421C0.190288 1.40603 0.245303 1.12259 0.350273 0.870694C0.455242 0.6188 0.606687 0.406797 0.79027 0.254768C0.973854 0.10274 1.1835 0.0157243 1.39936 0.00193865C1.61521 -0.011847 1.83014 0.0480663 2.02378 0.176003L20.4856 12.3292C20.6973 12.4694 20.8754 12.6856 20.9999 12.9535C21.1245 13.2214 21.1904 13.5304 21.1904 13.8456C21.1904 14.1608 21.1245 14.4697 20.9999 14.7376C20.8754 15.0055 20.6973 15.2217 20.4856 15.3619L2.02378 27.824C1.83056 27.9517 1.61615 28.0116 1.40076 27.9981C1.18536 27.9847 0.97607 27.8983 0.792638 27.7472C0.609205 27.596 0.457661 27.385 0.352299 27.1342C0.246938 26.8833 0.191236 26.6008 0.19043 26.3132Z"
-                                        fill="currentcolor" />
-                                </svg>
+
                             </a>
                             <div class="about__enrolled" data-aos="fade-right" data-aos-delay="200">
                                 <p class="title"><span>36K+</span> Enrolled Students</p>
@@ -295,7 +289,7 @@
                                 </li>
                             </ul>
                             <div class="tg-button-wrap">
-                                <a href="about-us.html" class="btn arrow-btn">Start Free Trial <img
+                                <a href="#0" class="btn arrow-btn">Start Free Trial <img
                                         src="/frontend/assets/img/icons/right_arrow.svg" alt="img"
                                         class="injectable"></a>
                             </div>
@@ -361,23 +355,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb01.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Development</a>
+                                                    <a href="#0">Development</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.8 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Learning JavaScript With
+                                            <h5 class="title"><a href="#0">Learning JavaScript With
                                                     Imagination</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -390,23 +384,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb02.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Design</a>
+                                                    <a href="#0">Design</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">The Complete Graphic
+                                            <h5 class="title"><a href="#0">The Complete Graphic
                                                     Design for Beginners</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -419,23 +413,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb03.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Marketing</a>
+                                                    <a href="#0">Marketing</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.3 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Learning Digital
+                                            <h5 class="title"><a href="#0">Learning Digital
                                                     Marketing on Facebook</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -448,23 +442,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb04.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Business</a>
+                                                    <a href="#0">Business</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.8 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Financial Analyst
+                                            <h5 class="title"><a href="#0">Financial Analyst
                                                     Training & Investing Course</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -477,23 +471,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb05.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Data Science</a>
+                                                    <a href="#0">Data Science</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Data Analysis &
+                                            <h5 class="title"><a href="#0">Data Analysis &
                                                     Visualization Masterclass</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -506,23 +500,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb06.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Mathematic</a>
+                                                    <a href="#0">Mathematic</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.7 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Master the Fundamentals
+                                            <h5 class="title"><a href="#0">Master the Fundamentals
                                                     of Math</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -546,23 +540,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb03.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Marketing</a>
+                                                    <a href="#0">Marketing</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.3 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Learning Digital
+                                            <h5 class="title"><a href="#0">Learning Digital
                                                     Marketing on Facebook</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -575,23 +569,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb04.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Business</a>
+                                                    <a href="#0">Business</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.8 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Financial Analyst
+                                            <h5 class="title"><a href="#0">Financial Analyst
                                                     Training & Investing Course</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -604,23 +598,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb01.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Development</a>
+                                                    <a href="#0">Development</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.8 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Learning JavaScript With
+                                            <h5 class="title"><a href="#0">Learning JavaScript With
                                                     Imagination</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -633,23 +627,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb02.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Design</a>
+                                                    <a href="#0">Design</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">The Complete Graphic
+                                            <h5 class="title"><a href="#0">The Complete Graphic
                                                     Design for Beginners</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -662,23 +656,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb05.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Data Science</a>
+                                                    <a href="#0">Data Science</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Data Analysis &
+                                            <h5 class="title"><a href="#0">Data Analysis &
                                                     Visualization Masterclass</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -691,23 +685,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb06.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Mathematic</a>
+                                                    <a href="#0">Mathematic</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.7 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Master the Fundamentals
+                                            <h5 class="title"><a href="#0">Master the Fundamentals
                                                     of Math</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -731,23 +725,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb02.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Design</a>
+                                                    <a href="#0">Design</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">The Complete Graphic
+                                            <h5 class="title"><a href="#0">The Complete Graphic
                                                     Design for Beginners</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -760,23 +754,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb03.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Marketing</a>
+                                                    <a href="#0">Marketing</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.3 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Learning Digital
+                                            <h5 class="title"><a href="#0">Learning Digital
                                                     Marketing on Facebook</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -789,23 +783,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb04.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Business</a>
+                                                    <a href="#0">Business</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.8 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Financial Analyst
+                                            <h5 class="title"><a href="#0">Financial Analyst
                                                     Training & Investing Course</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -818,23 +812,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb05.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Data Science</a>
+                                                    <a href="#0">Data Science</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Data Analysis &
+                                            <h5 class="title"><a href="#0">Data Analysis &
                                                     Visualization Masterclass</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -847,23 +841,23 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb01.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Development</a>
+                                                    <a href="#0">Development</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.8 Reviews)</li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Learning JavaScript With
+                                            <h5 class="title"><a href="#0">Learning JavaScript With
                                                     Imagination</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -876,24 +870,24 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb06.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Mathematic</a>
+                                                    <a href="#0">Mathematic</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.7 Reviews)
                                                 </li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Master the Fundamentals
+                                            <h5 class="title"><a href="#0">Master the Fundamentals
                                                     of Math</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -917,24 +911,24 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb04.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Business</a>
+                                                    <a href="#0">Business</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.8 Reviews)
                                                 </li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Financial Analyst
+                                            <h5 class="title"><a href="#0">Financial Analyst
                                                     Training & Investing Course</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -947,24 +941,24 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb05.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Data Science</a>
+                                                    <a href="#0">Data Science</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)
                                                 </li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Data Analysis &
+                                            <h5 class="title"><a href="#0">Data Analysis &
                                                     Visualization Masterclass</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -977,24 +971,24 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb06.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Mathematic</a>
+                                                    <a href="#0">Mathematic</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.7 Reviews)
                                                 </li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Master the Fundamentals
+                                            <h5 class="title"><a href="#0">Master the Fundamentals
                                                     of Math</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -1007,24 +1001,24 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb01.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Development</a>
+                                                    <a href="#0">Development</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.8 Reviews)
                                                 </li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Learning JavaScript
+                                            <h5 class="title"><a href="#0">Learning JavaScript
                                                     With Imagination</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -1037,24 +1031,24 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb02.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Design</a>
+                                                    <a href="#0">Design</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)
                                                 </li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">The Complete Graphic
+                                            <h5 class="title"><a href="#0">The Complete Graphic
                                                     Design for Beginners</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -1067,24 +1061,24 @@
                                 <div class="swiper-slide">
                                     <div class="courses__item shine__animate-item">
                                         <div class="courses__item-thumb">
-                                            <a href="course-details.html" class="shine__animate-link">
+                                            <a href="#0" class="shine__animate-link">
                                                 <img src="/frontend/assets/img/courses/course_thumb03.jpg" alt="img">
                                             </a>
                                         </div>
                                         <div class="courses__item-content">
                                             <ul class="courses__item-meta list-wrap">
                                                 <li class="courses__item-tag">
-                                                    <a href="course.html">Marketing</a>
+                                                    <a href="#0">Marketing</a>
                                                 </li>
                                                 <li class="avg-rating"><i class="fas fa-star"></i> (4.3 Reviews)
                                                 </li>
                                             </ul>
-                                            <h5 class="title"><a href="course-details.html">Learning Digital
+                                            <h5 class="title"><a href="#0">Learning Digital
                                                     Marketing on Facebook</a></h5>
                                             <p class="author">By <a href="#">David Millar</a></p>
                                             <div class="courses__item-bottom">
                                                 <div class="button">
-                                                    <a href="course-details.html">
+                                                    <a href="#0">
                                                         <span class="text">Enroll Now</span>
                                                         <i class="flaticon-arrow-right"></i>
                                                     </a>
@@ -1153,7 +1147,7 @@
                             <p>when an unknown printer took a galley of type and scrambled makespecimen book has
                                 survived not only five centuries</p>
                             <div class="tg-button-wrap">
-                                <a href="instructors.html" class="btn arrow-btn">See All Instructors <img
+                                <a href="#0" class="btn arrow-btn">See All Instructors <img
                                         src="/frontend/assets/img/icons/right_arrow.svg" alt="img"
                                         class="injectable"></a>
                             </div>
@@ -1165,12 +1159,11 @@
                                 <div class="col-sm-6">
                                     <div class="instructor__item">
                                         <div class="instructor__thumb">
-                                            <a href="instructor-datails.html"><img
-                                                    src="/frontend/assets/img/instructor/instructor01.png"
+                                            <a href="#0"><img src="/frontend/assets/img/instructor/instructor01.png"
                                                     alt="img"></a>
                                         </div>
                                         <div class="instructor__content">
-                                            <h2 class="title"><a href="instructor-datails.html">Mark Jukarberg</a>
+                                            <h2 class="title"><a href="#0">Mark Jukarberg</a>
                                             </h2>
                                             <span class="designation">UX Design Lead</span>
                                             <p class="avg-rating">
@@ -1191,12 +1184,11 @@
                                 <div class="col-sm-6">
                                     <div class="instructor__item">
                                         <div class="instructor__thumb">
-                                            <a href="instructor-datails.html"><img
-                                                    src="/frontend/assets/img/instructor/instructor02.png"
+                                            <a href="#0"><img src="/frontend/assets/img/instructor/instructor02.png"
                                                     alt="img"></a>
                                         </div>
                                         <div class="instructor__content">
-                                            <h2 class="title"><a href="instructor-datails.html">Olivia Mia</a></h2>
+                                            <h2 class="title"><a href="#0">Olivia Mia</a></h2>
                                             <span class="designation">Web Design</span>
                                             <p class="avg-rating">
                                                 <i class="fas fa-star"></i>
@@ -1216,12 +1208,11 @@
                                 <div class="col-sm-6">
                                     <div class="instructor__item">
                                         <div class="instructor__thumb">
-                                            <a href="instructor-datails.html"><img
-                                                    src="/frontend/assets/img/instructor/instructor03.png"
+                                            <a href="#0"><img src="/frontend/assets/img/instructor/instructor03.png"
                                                     alt="img"></a>
                                         </div>
                                         <div class="instructor__content">
-                                            <h2 class="title"><a href="instructor-datails.html">William Hope</a>
+                                            <h2 class="title"><a href="#0">William Hope</a>
                                             </h2>
                                             <span class="designation">Digital Marketing</span>
                                             <p class="avg-rating">
@@ -1242,12 +1233,12 @@
                                 <div class="col-sm-6">
                                     <div class="instructor__item">
                                         <div class="instructor__thumb">
-                                            <a href="instructor-datails.html"><img
+                                            <a href="#0"><img
                                                     src="/frontend/assets/img/instructor/instructor04.png"
                                                     alt="img"></a>
                                         </div>
                                         <div class="instructor__content">
-                                            <h2 class="title"><a href="instructor-datails.html">Sophia Ava</a></h2>
+                                            <h2 class="title"><a href="#0">Sophia Ava</a></h2>
                                             <span class="designation">Web Development</span>
                                             <p class="avg-rating">
                                                 <i class="fas fa-star"></i>
@@ -1508,11 +1499,11 @@
                                     </div>
                                 </div>
                                 <div class="instructor__content-two">
-                                    <h3 class="title"><a href="contact.html">Become a Instructor</a></h3>
+                                    <h3 class="title"><a href="#0">Become a Instructor</a></h3>
                                     <p>To take a trivial example, which of us undertakes physical exercise yes is this
                                         happen here.</p>
                                     <div class="tg-button-wrap">
-                                        <a href="contact.html" class="btn arrow-btn">Apply Now <img
+                                        <a href="#0" class="btn arrow-btn">Apply Now <img
                                                 src="/frontend/assets/img/icons/right_arrow.svg" alt="img"
                                                 class="injectable"></a>
                                     </div>
@@ -1533,11 +1524,11 @@
                                     </div>
                                 </div>
                                 <div class="instructor__content-two">
-                                    <h3 class="title"><a href="contact.html">Become a Student</a></h3>
+                                    <h3 class="title"><a href="#0">Become a Student</a></h3>
                                     <p>Join millions of people from around the world learning together. Online learning.
                                     </p>
                                     <div class="tg-button-wrap">
-                                        <a href="contact.html" class="btn arrow-btn">Apply Now <img
+                                        <a href="#0" class="btn arrow-btn">Apply Now <img
                                                 src="/frontend/assets/img/icons/right_arrow.svg" alt="img"
                                                 class="injectable"></a>
                                     </div>
@@ -1566,19 +1557,19 @@
                     <div class="col-xl-3 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img
+                                <a href="#0" class="shine__animate-link"><img
                                         src="/frontend/assets/img/blog/blog_post01.jpg" alt="img"></a>
-                                <a href="blog.html" class="post-tag">Marketing</a>
+                                <a href="#0" class="post-tag">Marketing</a>
                             </div>
                             <div class="blog__post-content">
                                 <div class="blog__post-meta">
                                     <ul class="list-wrap">
                                         <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="blog-details.html">Admin</a>
+                                        <li><i class="flaticon-user-1"></i>by <a href="#0">Admin</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <h4 class="title"><a href="blog-details.html">How To Become idiculously Self-Aware
+                                <h4 class="title"><a href="#0">How To Become idiculously Self-Aware
                                         In 20 Minutes</a></h4>
                             </div>
                         </div>
@@ -1586,19 +1577,19 @@
                     <div class="col-xl-3 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img
+                                <a href="#0" class="shine__animate-link"><img
                                         src="/frontend/assets/img/blog/blog_post02.jpg" alt="img"></a>
-                                <a href="blog.html" class="post-tag">Marketing</a>
+                                <a href="#0" class="post-tag">Marketing</a>
                             </div>
                             <div class="blog__post-content">
                                 <div class="blog__post-meta">
                                     <ul class="list-wrap">
                                         <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="blog-details.html">Admin</a>
+                                        <li><i class="flaticon-user-1"></i>by <a href="#0">Admin</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <h4 class="title"><a href="blog-details.html">Get Started With UI Design With Tips
+                                <h4 class="title"><a href="#0">Get Started With UI Design With Tips
                                         To Speed</a></h4>
                             </div>
                         </div>
@@ -1606,19 +1597,19 @@
                     <div class="col-xl-3 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img
+                                <a href="#0" class="shine__animate-link"><img
                                         src="/frontend/assets/img/blog/blog_post03.jpg" alt="img"></a>
-                                <a href="blog.html" class="post-tag">Marketing</a>
+                                <a href="#0" class="post-tag">Marketing</a>
                             </div>
                             <div class="blog__post-content">
                                 <div class="blog__post-meta">
                                     <ul class="list-wrap">
                                         <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="blog-details.html">Admin</a>
+                                        <li><i class="flaticon-user-1"></i>by <a href="#0">Admin</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <h4 class="title"><a href="blog-details.html">Make Your Own Expanding Contracting
+                                <h4 class="title"><a href="#0">Make Your Own Expanding Contracting
                                         Content</a></h4>
                             </div>
                         </div>
@@ -1626,19 +1617,19 @@
                     <div class="col-xl-3 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="blog-details.html" class="shine__animate-link"><img
+                                <a href="#0" class="shine__animate-link"><img
                                         src="/frontend/assets/img/blog/blog_post04.jpg" alt="img"></a>
-                                <a href="blog.html" class="post-tag">Marketing</a>
+                                <a href="#0" class="post-tag">Marketing</a>
                             </div>
                             <div class="blog__post-content">
                                 <div class="blog__post-meta">
                                     <ul class="list-wrap">
                                         <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="blog-details.html">Admin</a>
+                                        <li><i class="flaticon-user-1"></i>by <a href="#0">Admin</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <h4 class="title"><a href="blog-details.html">What we are capable to usually
+                                <h4 class="title"><a href="#0">What we are capable to usually
                                         discovered</a></h4>
                             </div>
                         </div>
