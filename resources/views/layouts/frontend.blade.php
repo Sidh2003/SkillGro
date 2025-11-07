@@ -1,24 +1,20 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
-
-<!-- Mirrored from html.themegenix.com/skillgro/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Oct 2025 11:10:14 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> @yield('title')</title>
+    <title>@yield('title')</title>
     <meta name="description" content="SkillGro - Online Courses & Education Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="/frontend/assets/img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" type="image/png" href="/frontend/assets/img/favicon.png">
 
-    <!-- CSS here -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="/frontend/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/frontend/assets/css/animate.min.css">
     <link rel="stylesheet" href="/frontend/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="/frontend/assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="/frontend/assets/css/flaticon-skillgro.css">
     <link rel="stylesheet" href="/frontend/assets/css/flaticon-skillgro-new.css">
     <link rel="stylesheet" href="/frontend/assets/css/swiper-bundle.min.css">
@@ -30,7 +26,16 @@
     <link rel="stylesheet" href="/frontend/assets/css/spacing.css">
     <link rel="stylesheet" href="/frontend/assets/css/tg-cursor.css">
     <link rel="stylesheet" href="/frontend/assets/css/main.css">
+
+    <!-- Optional (if exists) -->
+    <link rel="stylesheet" href="/frontend/assets/css/style.css">
+    <link rel="stylesheet" href="/frontend/assets/css/responsive.css">
+
+    <!-- Font Awesome (latest CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 
 <body>
 
@@ -94,143 +99,18 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                     <ul class="navigation">
-                                        <li class="active menu-item-has-children"><a href="#">Home</a>
-                                            <ul class="sub-menu mega-menu">
-                                                <li>
-                                                    <ul class="list-wrap mega-sub-menu">
-                                                        <li class="active">
-                                                            <a href="#0">Main Home</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0">Online Course <span
-                                                                    class="tg-badge">Hot</span></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0">University <span
-                                                                    class="tg-badge-two">New</span></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0">Yoga Instructor<span
-                                                                    class="tg-badge-two">New</span></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0">Kindergarten<span
-                                                                    class="tg-badge">Hot</span></a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul class="list-wrap mega-sub-menu">
-                                                        <li>
-                                                            <a href="#0">Language Academy<span
-                                                                    class="tg-badge-two">New</span></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0">Business Coach <span
-                                                                    class="tg-badge-two">New</span></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0">Kitchen Coach <span
-                                                                    class="tg-badge">Hot</span></a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <div class="mega-menu-img">
-                                                        <a href="#0"><img
-                                                                src="/frontend/assets/img/others/mega_menu_img.jpg"
-                                                                alt="img"></a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">Courses</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="#0">All Courses</a></li>
-                                                <li><a href="#0">Course Details</a></li>
-                                                <li><a href="#0">Course Lesson</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">Pages</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="#0">About Us</a></li>
-                                                <li class="menu-item-has-children">
-                                                    <a href="#0">Our Instructors</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="#0">Our Instructors</a></li>
-                                                        <li><a href="#0">Instructor Details</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children">
-                                                    <a href="#0">Our Events</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="#0">Our Events</a></li>
-                                                        <li><a href="#0">Event Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children">
-                                                    <a href="#0">Shop</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="#0">Shop Page</a></li>
-                                                        <li><a href="#0">Shop Details</a></li>
-                                                        <li><a href="#0">Cart Page</a></li>
-                                                        <li><a href="#0">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children">
-                                                    <a href="#0">Blog</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="#0">Blog Right Sidebar</a></li>
-                                                        <li><a href="#0">Blog Left Sidebar</a></li>
-                                                        <li><a href="#0">Blog Full Width</a></li>
-                                                        <li><a href="#0">Blog Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#0">Student Login</a></li>
-                                                <li><a href="#0">Student Registration</a></li>
-                                                <li><a href="#0">404 Page</a></li>
-                                                <li><a href="#0">contact</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">Dashboard</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item-has-children">
-                                                    <a href="#0">Instructor Dashboard</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="#0">Dashboard</a></li>
-                                                        <li><a href="#0">Profile</a></li>
-                                                        <li><a href="#0">Enrolled
-                                                                Courses</a></li>
-                                                        <li><a href="#0">Wishlist</a></li>
-                                                        <li><a href="#0">Reviews</a></li>
-                                                        <li><a href="#0">My Quiz Attempts</a>
-                                                        </li>
-                                                        <li><a href="#0">Order History</a></li>
-                                                        <li><a href="#0">My Course</a></li>
-                                                        <li><a href="#0">Announcements</a>
-                                                        </li>
-                                                        <li><a href="#0">Quiz Attempts</a></li>
-                                                        <li><a href="#0">Assignments</a></li>
-                                                        <li><a href="#0">Settings</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children"><a href="#0">Student
-                                                        Dashboard</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="#0">Dashboard</a></li>
-                                                        <li><a href="#0">Profile</a></li>
-                                                        <li><a href="#0">Enrolled
-                                                                Courses</a></li>
-                                                        <li><a href="#0">Wishlist</a></li>
-                                                        <li><a href="#0">Reviews</a></li>
-                                                        <li><a href="#0">My Quiz Attempts</a></li>
-                                                        <li><a href="#0">Order History</a></li>
-                                                        <li><a href="#0">Settings</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        <li class="nav-item @if (\Route::is('home')) active @endif"><a
+                                                href="/">Home</a></li>
+                                        <li class="nav-item @if (\Route::is('about')) active @endif"><a
+                                                href="/about">About Us</a></li>
+                                        <li class="nav-item @if (\Route::is('courses')) active @endif"><a
+                                                href="/courses">Courses</a> </li>
+                                        <li class="nav-item @if (\Route::is('blogs')) active @endif"><a
+                                                href="/blogs">Blogs</a> </li>
+                                        <li class="nav-item @if (\Route::is('contact')) active @endif"><a
+                                                href="/contact">Contact Us</a> </li>
+                                        <li class="nav-item @if (\Route::is('events')) active @endif"><a
+                                                href="/events">Our Events</a> </li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__search d-none d-md-block">
@@ -370,11 +250,11 @@
                             <h4 class="footer__widget-title">Our Company</h4>
                             <div class="footer__link">
                                 <ul class="list-wrap">
-                                    <li><a href="#0">Contact Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
                                     <li><a href="#0">Become Teacher</a></li>
-                                    <li><a href="#0">Blog</a></li>
+                                    <li><a href="/blogs">Blog</a></li>
                                     <li><a href="#0">Instructor</a></li>
-                                    <li><a href="#0">Events</a></li>
+                                    <li><a href="/events">Events</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -479,7 +359,5 @@
     </script>
 </body>
 
-
-<!-- Mirrored from html.themegenix.com/skillgro/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Oct 2025 11:10:52 GMT -->
 
 </html>
