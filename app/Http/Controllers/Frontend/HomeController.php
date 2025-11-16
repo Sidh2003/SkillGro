@@ -44,43 +44,4 @@ class HomeController extends Controller
         return view('Frontend.thankyou');
     }
 
-
-    // public function contactEnquiry(Request $request)
-    // {
-    //     // dd($request->all());
-    //     // dd($request->enquiry_type);
-    //     // Validation rules
-    //     $rules = [
-    //         'first_name' => 'required',
-    //         'last_name' => 'required',
-    //         'email' => 'required|email',
-    //         'mobile' => 'required|digits:10',
-    //         'captcha' => ['required', new CustomCaptcha($request->sequence)],
-    //     ];
-
-    //     $messages = [
-    //         'first_name.required' => 'Your First Name is required',
-    //         'last_name.required' => 'Your Last Name is required',
-    //         'email.required' => 'Email is required',
-    //         'email.email' => 'Email should be a valid email',
-    //         'mobile.required' => 'The mobile number field is required.',
-    //         'mobile.digits' => 'The mobile number must be exactly 10 digits.',
-    //     ];
-
-    //     $request->validate($rules, $messages);
-    //     $enquiry = new Enquiry();
-    //     $enquiry->first_name = $request->first_name;
-    //     $enquiry->last_name = $request->last_name;
-    //     $enquiry->mobile = $request->mobile;
-    //     $enquiry->email = $request->email;
-    //     $enquiry->message = $request->message;
-    //     $enquiry->enquiry_type = $request->enquiry_type;
-    //     $enquiry->save();
-
-    //     //dd($enquiry);
-    //     Mail::to('harshasreikicenter1111@gmail.com')->send(new ContactMail($enquiry));
-    //     Mail::to($request->email)->send(new Thankyou($enquiry));
-
-    //     return response()->json(['status' => 'success', 'message' => 'Enquiry Sent Successfully']);
-    // }
 }

@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::fallback(function () {
+    return response()->view('Error.404', [], 404);
+});
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/backend.php';

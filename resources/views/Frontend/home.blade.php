@@ -52,13 +52,13 @@
                                     <div class="image">
                                         <img src="/frontend/assets/img/banner/banner_author01.png" alt="img">
                                     </div>
-                                    <h6 class="name">Robert Fox</h6>
+                                    <h6 class="name">Siddhesh S.</h6>
                                 </div>
                                 <div class="banner__author-item">
                                     <div class="image">
                                         <img src="/frontend/assets/img/banner/banner_author02.png" alt="img">
                                     </div>
-                                    <h6 class="name">Michel Jones</h6>
+                                    <h6 class="name">Durva P.</h6>
                                 </div>
                                 <img src="/frontend/assets/img/banner/banner_shape02.svg" alt="shape"
                                     class="arrow-shape tg-motion-effects3">

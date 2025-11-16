@@ -25,22 +25,24 @@ function toIndianDateTime($datetime)
     return \Carbon\Carbon::parse($datetime)->format('d-m-Y h:i A');
 }
 
-function getSystemRoles(){
+function getSystemRoles()
+{
     $permission_seeder = new \Database\Seeders\PermissionSeeder;
     $roles = $permission_seeder->roles;
     $systemRoles = [];
-    foreach($roles as $role => $permissions){
+    foreach ($roles as $role => $permissions) {
         $systemRoles[] = $role;
     }
     return $systemRoles;
 }
 
-function getCountingNumber($model, $prefix , $field_name, $year = true){
+function getCountingNumber($model, $prefix, $field_name, $year = true)
+{
     $modelClass = "\App\Models\\" . $model;
     // Assuming you have an 'number_field' column in your database table
 
     $latestNumber = $modelClass::max($field_name);
-    if($latestNumber === null) {
+    if ($latestNumber === null) {
         // No records in the database yet, start with 1
         $lastNumberPart = 1;
     } else {
@@ -54,7 +56,7 @@ function getCountingNumber($model, $prefix , $field_name, $year = true){
     $financialYearStart = ($currentMonth >= 4) ? substr($currentYear, -2) : substr(($currentYear - 1), -2);
     $financialYearEnd = ($currentMonth >= 4) ? substr(($currentYear + 1), -2) : substr($currentYear, -2);
     $number = $prefix . '-' . $financialYearStart . '-' . $financialYearEnd . '-' . str_pad($lastNumberPart, 4, '0', STR_PAD_LEFT);
-    if(!$year){
+    if (!$year) {
         $number = $prefix . '-' . str_pad($lastNumberPart, 4, '0', STR_PAD_LEFT);
     }
     return $number;
@@ -130,8 +132,9 @@ function getDiscountedPercentage($originalPrice, $discountedPrice)
     return $formattedPercentage . '%';
 }
 
-function inRupee($num, $symbol=true, $pdf=false) {
-    $nums = explode('.',$num);
+function inRupee($num, $symbol = true, $pdf = false)
+{
+    $nums = explode('.', $num);
     $num = $nums[0];
 
     $minus = false;
@@ -140,54 +143,58 @@ function inRupee($num, $symbol=true, $pdf=false) {
         $num = substr($num, strpos($num, "-") + 1);
     }
 
-    $explrestunits = "" ;
-    if(strlen($num)>3) {
+    $explrestunits = "";
+    if (strlen($num) > 3) {
 
-        $lastthree = substr($num, strlen($num)-3, strlen($num));
+        $lastthree = substr($num, strlen($num) - 3, strlen($num));
 
-        $restunits = substr($num, 0, strlen($num)-3); // extracts the last three digits
-        $restunits = (strlen($restunits)%2 == 1)?"0".$restunits:$restunits; // explodes the remaining digits in 2's formats, adds a zero in the beginning to maintain the 2's grouping.
+        $restunits = substr($num, 0, strlen($num) - 3); // extracts the last three digits
+        $restunits = (strlen($restunits) % 2 == 1) ? "0" . $restunits : $restunits; // explodes the remaining digits in 2's formats, adds a zero in the beginning to maintain the 2's grouping.
         $expunit = str_split($restunits, 2);
-        for($i=0; $i<sizeof($expunit); $i++) {
+        for ($i = 0; $i < sizeof($expunit); $i++) {
             // creates each of the 2's group and adds a comma to the end
-            if($i==0) {
-                $explrestunits .= (int)$expunit[$i].","; // if is first value , convert into integer
+            if ($i == 0) {
+                $explrestunits .= (int) $expunit[$i] . ","; // if is first value , convert into integer
             } else {
-                $explrestunits .= $expunit[$i].",";
+                $explrestunits .= $expunit[$i] . ",";
             }
         }
-        $thecash = $explrestunits.$lastthree;
+        $thecash = $explrestunits . $lastthree;
     } else {
         $thecash = $num;
     }
 
-    if($minus){
-        $thecash = "-".$thecash;
+    if ($minus) {
+        $thecash = "-" . $thecash;
     }
 
-    if(isset($nums[1]) && $nums[1] > 0){
-        $thecash = $thecash.".".$nums[1];
-    }else{
+    if (isset($nums[1]) && $nums[1] > 0) {
+        $thecash = $thecash . "." . $nums[1];
+    } else {
         $thecash = $thecash;
     }
 
-    if($symbol){
-        $thecash = '₹ '.$thecash.'/-';
+    if ($symbol) {
+        $thecash = '₹ ' . $thecash . '/-';
 
         return $thecash;
 
 
-    }elseif($pdf){
+    } elseif ($pdf) {
 
         // return "Rs. ".$thecash.'/-';
-        return $thecash.'/-';
+        return $thecash . '/-';
 
-    }else{
+    } else {
 
-        return html_entity_decode('₹ '.$thecash.'/-');
+        return html_entity_decode('₹ ' . $thecash . '/-');
     }
 
 }
-function getDomainUrl(){
-    return $url = env("APP_URL", "https://ready.technicul.com");
+
+if (!function_exists('abort404')) {
+    function abort404()
+    {
+        abort(404);
+    }
 }

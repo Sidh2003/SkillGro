@@ -32,8 +32,7 @@
     <link rel="stylesheet" href="/frontend/assets/css/responsive.css">
 
     <!-- Font Awesome (latest CDN) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 
@@ -155,7 +154,7 @@
                                             </a>
                                         </li>
                                         <li class="header-btn login-btn">
-                                            <a href="#0">Log in</a>
+                                            <a href="/login" target="_blank">Log in</a>
                                         </li>
                                     </ul>
                                 </div>
