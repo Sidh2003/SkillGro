@@ -32,4 +32,6 @@ Route::get('/events', function () {
 
 Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
 
+Route::post('/contact-enquiry', [HomeController::class, 'contactEnquiry'])->name('contact-enquiry');
+
 

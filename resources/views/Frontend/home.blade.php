@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 @section('title')
-    Home Page | Skill Gro
+    SkillGro - Online Courses & Education Platform
 @endsection
 @section('content')
     <!-- main-area -->

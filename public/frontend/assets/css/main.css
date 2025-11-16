@@ -18247,7 +18247,7 @@ blockquote > p {
 .contact-map iframe {
   width: 100%;
   height: 100%;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -o-border-radius: 12px;
