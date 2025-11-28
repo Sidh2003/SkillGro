@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CrudController;
 use App\Http\Controllers\Admin\IconController;
 use App\Http\Controllers\Admin\ItemController;
@@ -83,14 +83,6 @@ Route::middleware(['auth', 'admin', 'preventBackHistory'])->group(function () {
         Route::post('sliders/change-status', [SliderController::class, 'changeStatus'])->name('sliders.change.status');
 
 
-        // Category
-        Route::resource('categories', CategoryController::class);
-        Route::post('categories/data', [CategoryController::class, 'data'])->name('categories.data');
-        Route::post('categories/list', [CategoryController::class, 'list'])->name('categories.list');
-        Route::post('categories/change-home_featured-status', [CategoryController::class, 'changeHomeFeaturedStatus'])->name('categories.change.home_featured.status');
-        Route::post('categories/change-status', [CategoryController::class, 'changeStatus'])->name('categories.change.status');
-
-
         // Product
         Route::resource('products', ProductController::class);
         Route::post('products/data', [ProductController::class, 'data'])->name('products.data');
@@ -125,6 +117,21 @@ Route::middleware(['auth', 'admin', 'preventBackHistory'])->group(function () {
         Route::resource('activities', ActivityController::class);
         Route::post('activities/data', [ActivityController::class, 'data'])->name('activities.data');
         Route::post('activities/list', [ActivityController::class, 'list'])->name('activities.list');
+
+
+        // Category
+        Route::resource('categories', CategoryController::class);
+        Route::post('categories/data', [CategoryController::class, 'data'])->name('categories.data');
+        Route::post('categories/list', [CategoryController::class, 'list'])->name('categories.list');
+        Route::post('categories/change-home_featured-status', [CategoryController::class, 'changeHomeFeaturedStatus'])->name('categories.change.home_featured.status');
+        Route::post('categories/change-status', [CategoryController::class, 'changeStatus'])->name('categories.change.status');
+
+        // Courses
+        Route::resource('courses', CourseController::class);
+        Route::post('courses/data', [CourseController::class, 'data'])->name('courses.data');
+        Route::post('courses/list', [CourseController::class, 'list'])->name('courses.list');
+        Route::post('courses/change-status', [CourseController::class, 'changeStatus'])->name('courses.change.status');
+
 
 
         //End of File

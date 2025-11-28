@@ -29,6 +29,12 @@ class HomeController extends Controller
     {
         return view('Frontend.courses');
     }
+
+    public function course_details(Request $request)
+    {
+        return view('Frontend.course_details');
+    }
+
     public function contact()
     {
         return view('Frontend.contact');
@@ -36,6 +42,58 @@ class HomeController extends Controller
     public function services()
     {
         return view('Frontend.services');
+    }
+
+    public function dashbord()
+    {
+        return view('Frontend.dashbord');
+    }
+    public function shop()
+    {
+        return view('Frontend.shop');
+    }
+
+    public function shop_details()
+    {
+        return view('Frontend.shop_details');
+    }
+
+    public function setting()
+    {
+        return view('Frontend.setting');
+    }
+
+    public function enrolled_courses()
+    {
+        return view('Frontend.enrolled_courses');
+    }
+
+    public function quiz()
+    {
+        return view('Frontend.quiz');
+    }
+
+    public function weekly_test()
+    {
+        return view('Frontend.weekly_test');
+    }
+
+    public function certifications()
+    {
+        return view('Frontend.certifications');
+    }
+
+    public function test()
+    {
+        return view('Frontend.Dashbord.test'); // matches your folder
+    }
+
+
+    public function submitTest(Request $request)
+    {
+        // Here you can store test answers if needed
+
+        return redirect('/weekly_test');
     }
 
 

@@ -31,9 +31,6 @@ class CategoryController extends Controller
             ->editColumn('index', function ($category) {
                 return $category->index;
             })
-            ->editColumn('description', function ($category) {
-                return $category->description;
-            })
             ->editColumn('home_featured', function ($category) {
                 if ($category->home_featured == 'ACTIVE') {
                     return '<div class="form-check form-switch"><input class="form-check-input categories-home_featured-switch" type="checkbox" data-column="home_featured"  checked data-routekey="' . $category->route_key . '"/></div>';
@@ -49,7 +46,7 @@ class CategoryController extends Controller
                 }
             })
             ->addColumn('action', function ($category) {
-                $edit  = '<a href="' . route('admin.categories.edit', ['category' => $category->route_key]) . '" class="badge bg-warning fs-1"><i class="fa fa-edit"></i></a>';
+                $edit = '<a href="' . route('admin.categories.edit', ['category' => $category->route_key]) . '" class="badge bg-warning fs-1"><i class="fa fa-edit"></i></a>';
                 return $edit;
             })
             ->addIndexColumn()
@@ -145,7 +142,6 @@ class CategoryController extends Controller
         'name' => 'required|regex:/^[\pL\s\-]+$/u',
         'slug' => 'required|alpha_dash|unique:categories,slug,',
         'index' => 'nullable|numeric',
-        'description' => 'nullable|string',
     ];
 
     private $customMessages = [
@@ -155,6 +151,5 @@ class CategoryController extends Controller
         'slug.alpha_dash' => 'Slug should only contain letters, numbers, dashes, and underscores',
         'slug.unique' => 'This slug is already in use',
         'index.numeric' => 'Index should be a number',
-        'description' => 'Description should be a string',
     ];
 }

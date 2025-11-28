@@ -293,6 +293,30 @@ class PermissionSeeder extends Seeder
                 ],
             ]
         ],
+        'Course' => [
+            'controller' => 'Admin\CourseController',
+            'permissions' => [
+                'course-view' => [
+                    'index',
+                    'data',
+                    'list',
+                    'show',
+                ],
+                'course-store' => [
+                    'create',
+                    'store',
+                ],
+                'course-update' => [
+                    'edit',
+                    'update',
+                    'changeStatus',
+                    'changeHomeFeaturedStatus',
+                ],
+                'course-destroy' => [
+                    'destroy'
+                ],
+            ]
+        ],
         //End of Permission Arr
     ];
 
@@ -368,6 +392,12 @@ class PermissionSeeder extends Seeder
             'activity-view',
             'activity-store',
             'activity-update',
+
+            #Course
+            'course-view',
+            'course-store',
+            'course-update',
+            'course-destroy',
 
             //End of Role Permission
         ],

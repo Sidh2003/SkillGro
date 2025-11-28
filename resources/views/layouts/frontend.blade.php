@@ -61,8 +61,6 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="tg-header__top-info list-wrap">
-                            <li><img src="/frontend/assets/img/icons/map_marker.svg" alt="Icon"> <span>589 5th Ave,
-                                    NY 10024, USA</span></li>
                             <li><img src="/frontend/assets/img/icons/envelope.svg" alt="Icon"> <a
                                     href="mailto:info@skillgrodemo.com">info@skillgrodemo.com</a></li>
                         </ul>
@@ -71,7 +69,7 @@
                         <div class="tg-header__top-right">
                             <div class="tg-header__phone">
                                 <img src="/frontend/assets/img/icons/phone.svg" alt="Icon">Call us: <a
-                                    href="tel:0123456789">+123 599 8989</a>
+                                    href="tel:0123456789">+91 8928678948</a>
                             </div>
                             <ul class="tg-header__top-social list-wrap">
                                 <li>Follow Us On :</li>
@@ -104,12 +102,12 @@
                                                 href="/about">About Us</a></li>
                                         <li class="nav-item @if (\Route::is('courses')) active @endif"><a
                                                 href="/courses">Courses</a> </li>
-                                        <li class="nav-item @if (\Route::is('blogs')) active @endif"><a
-                                                href="/blogs">Blogs</a> </li>
                                         <li class="nav-item @if (\Route::is('contact')) active @endif"><a
                                                 href="/contact">Contact Us</a> </li>
                                         <li class="nav-item @if (\Route::is('events')) active @endif"><a
                                                 href="/events">Our Events</a> </li>
+                                        <li class="nav-item @if (\Route::is('shop')) active @endif"><a
+                                                href="/shop">Shop</a> </li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__search d-none d-md-block">
@@ -154,7 +152,7 @@
                                             </a>
                                         </li>
                                         <li class="header-btn login-btn">
-                                            <a href="/login" target="_blank">Log in</a>
+                                            <a href="/dashbord" target="_blank">Log in</a>
                                         </li>
                                     </ul>
                                 </div>

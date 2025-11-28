@@ -1,3 +1,4 @@
+f
 <?php
 
 namespace App\Http\Controllers\Api;
@@ -20,11 +21,12 @@ use App\Http\Resources\Slider as SliderResource;
 
 class HomeController extends Controller
 {
-    public function getSliders(Request $request){
+    public function getSliders(Request $request)
+    {
 
         $sliders = Slider::get();
         $sliders = new SliderResource($sliders);
-        return response()->json($sliders,200);
+        return response()->json($sliders, 200);
     }
 
     public function getStickercategories()
@@ -32,7 +34,8 @@ class HomeController extends Controller
         $stickercategory = \DB::table('stickercategories')->where('status', 'ACTIVE')->orderby('index', 'ASC')->get();
         return response()->json($stickercategory, 200);
     }
-    public function getStickerimages( Request $request){
+    public function getStickerimages(Request $request)
+    {
         if (isset($request->stickercategory_id)) {
             $stickerimages = Stickerimage::where('status', 'ACTIVE')->where('stickercategory_id', $request->stickercategory_id)->get();
         } else {
@@ -82,18 +85,18 @@ class HomeController extends Controller
     public function getFrameposters(Request $request)
     {
         $frames = Frameposter::where('status', 'ACTIVE')
-        ->when($request->frameposter_id, function ($query) use ($request) {
+            ->when($request->frameposter_id, function ($query) use ($request) {
                 return $query->where('id', $request->frameposter_id);
-        })->get();
+            })->get();
 
         return response()->json(['data' => FrameposterResource::collection($frames)], 200);
     }
     public function getSocialFrameposters(Request $request)
     {
-        $social_frameposters =  Socialframe::where('status', 'ACTIVE')
-        ->when($request->social_frameposter_id, function ($query) use ($request) {
+        $social_frameposters = Socialframe::where('status', 'ACTIVE')
+            ->when($request->social_frameposter_id, function ($query) use ($request) {
                 return $query->where('id', $request->social_frameposter_id);
-        })->get();
+            })->get();
 
         return response()->json(['data' => FrameposterResource::collection($social_frameposters)], 200);
     }
@@ -104,187 +107,187 @@ class HomeController extends Controller
         $user = User::find(auth('api')->user()->id);
 
 
-            if($user->business_logo_from_top_measurement == null){
-                $user->business_logo_from_top_measurement = '210';
-            }
-            if($user->business_logo_from_left_measurement == null){
-                $user->business_logo_from_left_measurement = '20';
-            }
-            if($user->business_personal_photo_from_top_measurement == null){
-                $user->business_personal_photo_from_top_measurement = '220';
-            }
-            if($user->business_personal_photo_from_left_measurement == null){
-                $user->business_personal_photo_from_left_measurement = '220';
-            }
-            if($user->business_category_name_from_top_measurement == null){
-                $user->business_category_name_from_top_measurement = '230';
-            }
-            if($user->business_category_name_from_left_measurement == null){
-                $user->business_category_name_from_left_measurement = '130';
-            }
-            if($user->business_company_name_from_top_measurement == null){
-                $user->business_company_name_from_top_measurement = '240';
-            }
-            if($user->business_company_name_from_left_measurement == null){
-                $user->business_company_name_from_left_measurement = '140';
-            }
-            if($user->business_personal_name_from_top_measurement == null){
-                $user->business_personal_name_from_top_measurement = '250';
-            }
-            if($user->business_personal_name_from_left_measurement == null){
-                $user->business_personal_name_from_left_measurement = '50';
-            }
-            if($user->business_designation_from_top_measurement == null){
-                $user->business_designation_from_top_measurement = '260';
-            }
-            if($user->business_designation_from_left_measurement == null){
-                $user->business_designation_from_left_measurement = '90';
-            }
-            if($user->business_mobile_from_top_measurement == null){
-                $user->business_mobile_from_top_measurement = '270';
-            }
-            if($user->business_mobile_from_left_measurement == null){
-                $user->business_mobile_from_left_measurement = '70';
-            }
-            if($user->business_email_from_top_measurement == null){
-                $user->business_email_from_top_measurement = '280';
-            }
-            if($user->business_email_from_left_measurement == null){
-                $user->business_email_from_left_measurement = '80';
-            }
-            if($user->business_website_from_top_measurement == null){
-                $user->business_website_from_top_measurement = '190';
-            }
-            if($user->business_website_from_left_measurement == null){
-                $user->business_website_from_left_measurement = '90';
-            }
-            if($user->business_facebook_account_from_top_measurement == null){
-                $user->business_facebook_account_from_top_measurement = '200';
-            }
-            if($user->business_facebook_account_from_left_measurement == null){
-                $user->business_facebook_account_from_left_measurement = '100';
-            }
-            if($user->business_twitter_account_from_top_measurement == null){
-                $user->business_twitter_account_from_top_measurement = '210';
-            }
-            if($user->business_twitter_account_from_left_measurement == null){
-                $user->business_twitter_account_from_left_measurement = '10';
-            }
-            if($user->business_instagram_account_from_top_measurement == null){
-                $user->business_instagram_account_from_top_measurement = '260';
-            }
-            if($user->business_instagram_account_from_left_measurement == null){
-                $user->business_instagram_account_from_left_measurement = '150';
-            }
-            if($user->political_logo_from_top_measurement == null){
-                $user->political_logo_from_top_measurement = '240';
-            }
-            if($user->political_logo_from_left_measurement == null){
-                $user->political_logo_from_left_measurement = '80';
-            }
-            if($user->political_personal_photo_from_top_measurement == null){
-                $user->political_personal_photo_from_top_measurement = '220';
-            }
-            if($user->political_personal_photo_from_left_measurement == null){
-                $user->political_personal_photo_from_left_measurement = '250';
-            }
-            if($user->political_party_name_from_top_measurement == null){
-                $user->political_party_name_from_top_measurement = '280';
-            }
-            if($user->political_party_name_from_left_measurement == null){
-                $user->political_party_name_from_left_measurement = '90';
-            }
-            if($user->political_personal_name_from_top_measurement == null){
-                $user->political_personal_name_from_top_measurement = '210';
-            }
-            if($user->political_personal_name_from_left_measurement == null){
-                $user->political_personal_name_from_left_measurement = '186';
-            }
-            if($user->political_designation_from_top_measurement == null){
-                $user->political_designation_from_top_measurement = '250';
-            }
-            if($user->political_designation_from_left_measurement == null){
-                $user->political_designation_from_left_measurement = '239';
-            }
-            if($user->political_mobile_from_top_measurement == null){
-                $user->political_mobile_from_top_measurement = '210';
-            }
-            if($user->political_mobile_from_left_measurement == null){
-                $user->political_mobile_from_left_measurement = '99';
-            }
-            if($user->political_email_from_top_measurement == null){
-                $user->political_email_from_top_measurement = '260';
-            }
-            if($user->political_email_from_left_measurement == null){
-                $user->political_email_from_left_measurement = '196';
-            }
-            if($user->political_website_from_top_measurement == null){
-                $user->political_website_from_top_measurement = '260';
-            }
-            if($user->political_website_from_left_measurement == null){
-                $user->political_website_from_left_measurement = '145';
-            }
-            if($user->political_facebook_account_from_top_measurement == null){
-                $user->political_facebook_account_from_top_measurement = '240';
-            }
-            if($user->political_facebook_account_from_left_measurement == null){
-                $user->political_facebook_account_from_left_measurement = '211';
-            }
-            if($user->political_twitter_account_from_top_measurement == null){
-                $user->political_twitter_account_from_top_measurement = '200';
-            }
-            if($user->political_twitter_account_from_left_measurement == null){
-                $user->political_twitter_account_from_left_measurement = '200';
-            }
-            if($user->political_instagram_account_from_top_measurement == null){
-                $user->political_instagram_account_from_top_measurement = '230';
-            }
-            if($user->political_instagram_account_from_left_measurement == null){
-                $user->political_instagram_account_from_left_measurement = '140';
-            }
+        if ($user->business_logo_from_top_measurement == null) {
+            $user->business_logo_from_top_measurement = '210';
+        }
+        if ($user->business_logo_from_left_measurement == null) {
+            $user->business_logo_from_left_measurement = '20';
+        }
+        if ($user->business_personal_photo_from_top_measurement == null) {
+            $user->business_personal_photo_from_top_measurement = '220';
+        }
+        if ($user->business_personal_photo_from_left_measurement == null) {
+            $user->business_personal_photo_from_left_measurement = '220';
+        }
+        if ($user->business_category_name_from_top_measurement == null) {
+            $user->business_category_name_from_top_measurement = '230';
+        }
+        if ($user->business_category_name_from_left_measurement == null) {
+            $user->business_category_name_from_left_measurement = '130';
+        }
+        if ($user->business_company_name_from_top_measurement == null) {
+            $user->business_company_name_from_top_measurement = '240';
+        }
+        if ($user->business_company_name_from_left_measurement == null) {
+            $user->business_company_name_from_left_measurement = '140';
+        }
+        if ($user->business_personal_name_from_top_measurement == null) {
+            $user->business_personal_name_from_top_measurement = '250';
+        }
+        if ($user->business_personal_name_from_left_measurement == null) {
+            $user->business_personal_name_from_left_measurement = '50';
+        }
+        if ($user->business_designation_from_top_measurement == null) {
+            $user->business_designation_from_top_measurement = '260';
+        }
+        if ($user->business_designation_from_left_measurement == null) {
+            $user->business_designation_from_left_measurement = '90';
+        }
+        if ($user->business_mobile_from_top_measurement == null) {
+            $user->business_mobile_from_top_measurement = '270';
+        }
+        if ($user->business_mobile_from_left_measurement == null) {
+            $user->business_mobile_from_left_measurement = '70';
+        }
+        if ($user->business_email_from_top_measurement == null) {
+            $user->business_email_from_top_measurement = '280';
+        }
+        if ($user->business_email_from_left_measurement == null) {
+            $user->business_email_from_left_measurement = '80';
+        }
+        if ($user->business_website_from_top_measurement == null) {
+            $user->business_website_from_top_measurement = '190';
+        }
+        if ($user->business_website_from_left_measurement == null) {
+            $user->business_website_from_left_measurement = '90';
+        }
+        if ($user->business_facebook_account_from_top_measurement == null) {
+            $user->business_facebook_account_from_top_measurement = '200';
+        }
+        if ($user->business_facebook_account_from_left_measurement == null) {
+            $user->business_facebook_account_from_left_measurement = '100';
+        }
+        if ($user->business_twitter_account_from_top_measurement == null) {
+            $user->business_twitter_account_from_top_measurement = '210';
+        }
+        if ($user->business_twitter_account_from_left_measurement == null) {
+            $user->business_twitter_account_from_left_measurement = '10';
+        }
+        if ($user->business_instagram_account_from_top_measurement == null) {
+            $user->business_instagram_account_from_top_measurement = '260';
+        }
+        if ($user->business_instagram_account_from_left_measurement == null) {
+            $user->business_instagram_account_from_left_measurement = '150';
+        }
+        if ($user->political_logo_from_top_measurement == null) {
+            $user->political_logo_from_top_measurement = '240';
+        }
+        if ($user->political_logo_from_left_measurement == null) {
+            $user->political_logo_from_left_measurement = '80';
+        }
+        if ($user->political_personal_photo_from_top_measurement == null) {
+            $user->political_personal_photo_from_top_measurement = '220';
+        }
+        if ($user->political_personal_photo_from_left_measurement == null) {
+            $user->political_personal_photo_from_left_measurement = '250';
+        }
+        if ($user->political_party_name_from_top_measurement == null) {
+            $user->political_party_name_from_top_measurement = '280';
+        }
+        if ($user->political_party_name_from_left_measurement == null) {
+            $user->political_party_name_from_left_measurement = '90';
+        }
+        if ($user->political_personal_name_from_top_measurement == null) {
+            $user->political_personal_name_from_top_measurement = '210';
+        }
+        if ($user->political_personal_name_from_left_measurement == null) {
+            $user->political_personal_name_from_left_measurement = '186';
+        }
+        if ($user->political_designation_from_top_measurement == null) {
+            $user->political_designation_from_top_measurement = '250';
+        }
+        if ($user->political_designation_from_left_measurement == null) {
+            $user->political_designation_from_left_measurement = '239';
+        }
+        if ($user->political_mobile_from_top_measurement == null) {
+            $user->political_mobile_from_top_measurement = '210';
+        }
+        if ($user->political_mobile_from_left_measurement == null) {
+            $user->political_mobile_from_left_measurement = '99';
+        }
+        if ($user->political_email_from_top_measurement == null) {
+            $user->political_email_from_top_measurement = '260';
+        }
+        if ($user->political_email_from_left_measurement == null) {
+            $user->political_email_from_left_measurement = '196';
+        }
+        if ($user->political_website_from_top_measurement == null) {
+            $user->political_website_from_top_measurement = '260';
+        }
+        if ($user->political_website_from_left_measurement == null) {
+            $user->political_website_from_left_measurement = '145';
+        }
+        if ($user->political_facebook_account_from_top_measurement == null) {
+            $user->political_facebook_account_from_top_measurement = '240';
+        }
+        if ($user->political_facebook_account_from_left_measurement == null) {
+            $user->political_facebook_account_from_left_measurement = '211';
+        }
+        if ($user->political_twitter_account_from_top_measurement == null) {
+            $user->political_twitter_account_from_top_measurement = '200';
+        }
+        if ($user->political_twitter_account_from_left_measurement == null) {
+            $user->political_twitter_account_from_left_measurement = '200';
+        }
+        if ($user->political_instagram_account_from_top_measurement == null) {
+            $user->political_instagram_account_from_top_measurement = '230';
+        }
+        if ($user->political_instagram_account_from_left_measurement == null) {
+            $user->political_instagram_account_from_left_measurement = '140';
+        }
 
-            if($user->personal_photo_from_top_measurement == null){
-                $user->personal_photo_from_top_measurement = '280';
-            }
-            if($user->personal_photo_from_left_measurement == null){
-                $user->personal_photo_from_left_measurement = '280';
-            }
-            if($user->personal_name_from_top_measurement == null){
-                $user->personal_name_from_top_measurement = '345';
-            }
-            if($user->personal_name_from_left_measurement == null){
-                $user->personal_name_from_left_measurement = '50';
-            }
-            if($user->personal_designation_from_top_measurement == null){
-                $user->personal_designation_from_top_measurement = '340';
-            }
-            if($user->personal_designation_from_left_measurement == null){
-                $user->personal_designation_from_left_measurement = '50';
-            }
-            if($user->personal_mobile_from_top_measurement == null){
-                $user->personal_mobile_from_top_measurement = '320';
-            }
-            if($user->personal_mobile_from_left_measurement == null){
-                $user->personal_mobile_from_left_measurement = '110';
-            }
-            if($user->personal_facebook_account_from_top_measurement == null){
-                $user->personal_facebook_account_from_top_measurement = '280';
-            }
-            if($user->personal_facebook_account_from_left_measurement == null){
-                $user->personal_facebook_account_from_left_measurement = '100';
-            }
-            if($user->personal_twitter_account_from_top_measurement == null){
-                $user->personal_twitter_account_from_top_measurement = '310';
-            }
-            if($user->personal_twitter_account_from_left_measurement == null){
-                $user->personal_twitter_account_from_left_measurement = '200';
-            }
-            if($user->personal_instagram_account_from_top_measurement == null){
-                $user->personal_instagram_account_from_top_measurement = '320';
-            }
-            if($user->personal_instagram_account_from_left_measurement == null){
-                $user->personal_instagram_account_from_left_measurement = '30';
-            }
+        if ($user->personal_photo_from_top_measurement == null) {
+            $user->personal_photo_from_top_measurement = '280';
+        }
+        if ($user->personal_photo_from_left_measurement == null) {
+            $user->personal_photo_from_left_measurement = '280';
+        }
+        if ($user->personal_name_from_top_measurement == null) {
+            $user->personal_name_from_top_measurement = '345';
+        }
+        if ($user->personal_name_from_left_measurement == null) {
+            $user->personal_name_from_left_measurement = '50';
+        }
+        if ($user->personal_designation_from_top_measurement == null) {
+            $user->personal_designation_from_top_measurement = '340';
+        }
+        if ($user->personal_designation_from_left_measurement == null) {
+            $user->personal_designation_from_left_measurement = '50';
+        }
+        if ($user->personal_mobile_from_top_measurement == null) {
+            $user->personal_mobile_from_top_measurement = '320';
+        }
+        if ($user->personal_mobile_from_left_measurement == null) {
+            $user->personal_mobile_from_left_measurement = '110';
+        }
+        if ($user->personal_facebook_account_from_top_measurement == null) {
+            $user->personal_facebook_account_from_top_measurement = '280';
+        }
+        if ($user->personal_facebook_account_from_left_measurement == null) {
+            $user->personal_facebook_account_from_left_measurement = '100';
+        }
+        if ($user->personal_twitter_account_from_top_measurement == null) {
+            $user->personal_twitter_account_from_top_measurement = '310';
+        }
+        if ($user->personal_twitter_account_from_left_measurement == null) {
+            $user->personal_twitter_account_from_left_measurement = '200';
+        }
+        if ($user->personal_instagram_account_from_top_measurement == null) {
+            $user->personal_instagram_account_from_top_measurement = '320';
+        }
+        if ($user->personal_instagram_account_from_left_measurement == null) {
+            $user->personal_instagram_account_from_left_measurement = '30';
+        }
 
         return response()->json(new UserResource($user), 200);
     }
@@ -364,14 +367,14 @@ class HomeController extends Controller
 
         $user->fill($request->all());
         $user->is_profile_completed = 1;
-        if($request->hasFile('political_personal_photo')){
-            $user->political_personal_photo = \Storage::disk('public')->put('political_personal_photos',$request->political_personal_photo);
+        if ($request->hasFile('political_personal_photo')) {
+            $user->political_personal_photo = \Storage::disk('public')->put('political_personal_photos', $request->political_personal_photo);
         }
-        if($request->hasFile('political_logo')){
-            $user->political_logo = \Storage::disk('public')->put('political_logos',$request->political_logo);
+        if ($request->hasFile('political_logo')) {
+            $user->political_logo = \Storage::disk('public')->put('political_logos', $request->political_logo);
         }
         $user->save();
-        return response()->json(['message' => 'user updated successfully','user' => new UserResource($user) ], 200);
+        return response()->json(['message' => 'user updated successfully', 'user' => new UserResource($user)], 200);
     }
 
     public function updateBusinessUser(Request $request)
@@ -433,14 +436,14 @@ class HomeController extends Controller
 
         $user->fill($request->all());
         $user->is_profile_completed = 1;
-        if($request->hasFile('business_logo')){
-            $user->business_logo = \Storage::disk('public')->put('business_logos',$request->business_logo);
+        if ($request->hasFile('business_logo')) {
+            $user->business_logo = \Storage::disk('public')->put('business_logos', $request->business_logo);
         }
-        if($request->hasFile('business_personal_photo')){
-            $user->business_personal_photo = \Storage::disk('public')->put('business_personal_photos',$request->business_personal_photo);
+        if ($request->hasFile('business_personal_photo')) {
+            $user->business_personal_photo = \Storage::disk('public')->put('business_personal_photos', $request->business_personal_photo);
         }
         $user->save();
-        return response()->json(['message' => 'user updated successfully','user' => new UserResource($user) ], 200);
+        return response()->json(['message' => 'user updated successfully', 'user' => new UserResource($user)], 200);
     }
 
     public function updatePersonalUser(Request $request)
@@ -480,17 +483,17 @@ class HomeController extends Controller
         }
 
         $user->fill($request->all());
-        if($request->hasFile('personal_photo')){
-            $user->personal_photo = \Storage::disk('public')->put('personal_photos',$request->personal_photo);
+        if ($request->hasFile('personal_photo')) {
+            $user->personal_photo = \Storage::disk('public')->put('personal_photos', $request->personal_photo);
         }
         $user->is_profile_completed = 1;
         $user->save();
-        return response()->json(['message' => 'user updated successfully','user' => new UserResource($user) ], 200);
+        return response()->json(['message' => 'user updated successfully', 'user' => new UserResource($user)], 200);
     }
 
     public function myPackage()
     {
-        $order = Order::where('user_id', auth('api')->user()->id)->where('status','COMPLETED')->orderby('id', 'DESC')->first();
+        $order = Order::where('user_id', auth('api')->user()->id)->where('status', 'COMPLETED')->orderby('id', 'DESC')->first();
         if ($order) {
             $package = Package::find($order->package_id);
             $package->days_remaining = $order->created_at->addDays($package->duration)->diffInDays(now());
@@ -514,7 +517,7 @@ class HomeController extends Controller
         $order->package_id = $request->package_id;
         $order->merchant_transaction_id = $request->merchant_transaction_id;
         $order->save();
-        return response()->json(['message' => 'Order created successfully','order' => $order ], 200);
+        return response()->json(['message' => 'Order created successfully', 'order' => $order], 200);
     }
 
     public function storePoster(Request $request)
@@ -527,44 +530,46 @@ class HomeController extends Controller
             $userposter->poster = $filePath;
         }
         $userposter->save();
-        return response()->json(['message' => 'Poster created successfully','userposter' => $userposter ], 200);
+        return response()->json(['message' => 'Poster created successfully', 'userposter' => $userposter], 200);
     }
 
     public function getPosters(Request $request)
     {
-        $userposters = Userposter::where('user_id',auth('api')->user()->id)->get();
+        $userposters = Userposter::where('user_id', auth('api')->user()->id)->get();
         $sliders = new UserposterResource($userposters);
-        return response()->json(['message' => 'Posters fetched successfully','userposters' => $userposters ], 200);
+        return response()->json(['message' => 'Posters fetched successfully', 'userposters' => $userposters], 200);
     }
 
     public function deletePosters(Request $request)
     {
         $userposter = Userposter::find($request->userposter_id);
-        if($userposter){
+        if ($userposter) {
             $userposter->delete();
 
-            $userposters = Userposter::where('user_id',auth('api')->user()->id)->get();
+            $userposters = Userposter::where('user_id', auth('api')->user()->id)->get();
             $sliders = new UserposterResource($userposters);
-            return response()->json(['message' => 'Poster deleted successfully','userposters' => $userposters ], 200);
-        }else{
-            return response()->json(['message' => 'Poster not found' ], 404);
+            return response()->json(['message' => 'Poster deleted successfully', 'userposters' => $userposters], 200);
+        } else {
+            return response()->json(['message' => 'Poster not found'], 404);
         }
     }
 
-    function changeActiveProfile(Request $request){
+    function changeActiveProfile(Request $request)
+    {
         $user = User::find(auth('api')->user()->id);
         $user->active_profile = $request->active_profile;
         $user->save();
-        return response()->json(['message' => 'Active profile changed successfully','user' => new UserResource($user) ], 200);
+        return response()->json(['message' => 'Active profile changed successfully', 'user' => new UserResource($user)], 200);
     }
 
-    function  storeMeasurement(Request $request){
+    function storeMeasurement(Request $request)
+    {
         $user = User::find(auth('api')->user()->id);
 
         $user->fill($request->all());
         $user->save();
 
-        return response()->json(['message' => 'Measurement updated successfully','user' => new UserResource($user) ], 200);
+        return response()->json(['message' => 'Measurement updated successfully', 'user' => new UserResource($user)], 200);
     }
 
 
@@ -717,7 +722,7 @@ class HomeController extends Controller
 
                     return response()->json([
                         'message' => 'payment success',
-                      'order' => new MasterResource($order)
+                        'order' => new MasterResource($order)
                     ]);
                 } else {
                     return response()->json(['message' => 'order not found'], 400);

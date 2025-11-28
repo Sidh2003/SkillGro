@@ -154,8 +154,8 @@
 
                                 <!-- Logo -->
                                 <div class="text-center mb-4 logo-title">
-                                    <img src="/backend/logo/dashbord-logo.png" width="180" alt="Logo" />
-                                    <h2 class="mb-2 fs-7 fw-bolder">Welcome to Premium Dashboard</h2>
+                                    <img src="/frontend/assets/img/logo/logo.svg" width="180" alt="Logo" />
+                                    <h2 class="mb-2 fs-7 fw-bolder">Welcome to SkillGro</h2>
                                     <p class="mb-4">Your Admin Dashboard</p>
                                 </div>
 

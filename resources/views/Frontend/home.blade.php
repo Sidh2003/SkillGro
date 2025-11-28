@@ -47,22 +47,6 @@
                                 class="shape bg-dots rotateme">
                             <img src="/frontend/assets/img/banner/banner_shape02.png" alt="shape"
                                 class="shape small-shape tg-motion-effects3">
-                            <div class="banner__author">
-                                <div class="banner__author-item">
-                                    <div class="image">
-                                        <img src="/frontend/assets/img/banner/banner_author01.png" alt="img">
-                                    </div>
-                                    <h6 class="name">Siddhesh S.</h6>
-                                </div>
-                                <div class="banner__author-item">
-                                    <div class="image">
-                                        <img src="/frontend/assets/img/banner/banner_author02.png" alt="img">
-                                    </div>
-                                    <h6 class="name">Durva P.</h6>
-                                </div>
-                                <img src="/frontend/assets/img/banner/banner_shape02.svg" alt="shape"
-                                    class="arrow-shape tg-motion-effects3">
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1547,96 +1531,94 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section__title text-center mb-40">
-                            <span class="sub-title">News & Blogs</span>
-                            <h2 class="title">Our Latest News Feed</h2>
-                            <p>when known printer took a galley of type scrambl edmake</p>
+                            <span class="sub-title">Upcoming Events</span>
+                            <h2 class="title">Our Latest Upcoming Events</h2>
+                            <p>Stay updated with our exciting new workshops, seminars, and special events.</p>
                         </div>
                     </div>
                 </div>
                 <div class="row gutter-20">
+
                     <div class="col-xl-3 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="#0" class="shine__animate-link"><img
-                                        src="/frontend/assets/img/blog/blog_post01.jpg" alt="img"></a>
-                                <a href="#0" class="post-tag">Marketing</a>
+                                <a href="#0" class="shine__animate-link"><img src="/frontend/my-img/seminar.avif"
+                                        alt="event"></a>
+                                <a href="#0" class="post-tag">Workshop</a>
                             </div>
                             <div class="blog__post-content">
                                 <div class="blog__post-meta">
                                     <ul class="list-wrap">
-                                        <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="#0">Admin</a>
-                                        </li>
+                                        <li><i class="flaticon-calendar"></i>12 January, 2025</li>
+                                        <li><i class="flaticon-user-1"></i>Hosted by <a href="#0">SkillGro</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="title"><a href="#0">How To Become idiculously Self-Aware
-                                        In 20 Minutes</a></h4>
+                                <h4 class="title"><a href="#0">Full Stack Development Live Workshop</a></h4>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xl-3 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
-                                <a href="#0" class="shine__animate-link"><img
-                                        src="/frontend/assets/img/blog/blog_post02.jpg" alt="img"></a>
-                                <a href="#0" class="post-tag">Marketing</a>
+                                <a href="#0" class="shine__animate-link"><img src="/frontend/my-img/seminar.avif"
+                                        alt="event"></a>
+                                <a href="#0" class="post-tag">Seminar</a>
                             </div>
                             <div class="blog__post-content">
                                 <div class="blog__post-meta">
                                     <ul class="list-wrap">
-                                        <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="#0">Admin</a>
-                                        </li>
+                                        <li><i class="flaticon-calendar"></i>25 January, 2025</li>
+                                        <li><i class="flaticon-user-1"></i>Hosted by <a href="#0">SkillGro</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="title"><a href="#0">Get Started With UI Design With Tips
-                                        To Speed</a></h4>
+                                <h4 class="title"><a href="#0">Career Building Guidance Seminar</a></h4>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xl-3 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
                                 <a href="#0" class="shine__animate-link"><img
-                                        src="/frontend/assets/img/blog/blog_post03.jpg" alt="img"></a>
-                                <a href="#0" class="post-tag">Marketing</a>
+                                        src="/frontend/my-img/coding-bootcamp.jpg" alt="event"></a>
+                                <a href="#0" class="post-tag">Bootcamp</a>
                             </div>
                             <div class="blog__post-content">
                                 <div class="blog__post-meta">
                                     <ul class="list-wrap">
-                                        <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="#0">Admin</a>
-                                        </li>
+                                        <li><i class="flaticon-calendar"></i>10 February, 2025</li>
+                                        <li><i class="flaticon-user-1"></i>Hosted by <a href="#0">SkillGro</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="title"><a href="#0">Make Your Own Expanding Contracting
-                                        Content</a></h4>
+                                <h4 class="title"><a href="#0">UI/UX Creative Design Bootcamp</a></h4>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xl-3 col-md-6">
                         <div class="blog__post-item shine__animate-item">
                             <div class="blog__post-thumb">
                                 <a href="#0" class="shine__animate-link"><img
-                                        src="/frontend/assets/img/blog/blog_post04.jpg" alt="img"></a>
-                                <a href="#0" class="post-tag">Marketing</a>
+                                        src="/frontend/my-img/conference.jpg" alt="event"></a>
+                                <a href="#0" class="post-tag">Conference</a>
                             </div>
                             <div class="blog__post-content">
                                 <div class="blog__post-meta">
                                     <ul class="list-wrap">
-                                        <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="#0">Admin</a>
-                                        </li>
+                                        <li><i class="flaticon-calendar"></i>28 February, 2025</li>
+                                        <li><i class="flaticon-user-1"></i>Hosted by <a href="#0">SkillGro</a></li>
                                     </ul>
                                 </div>
-                                <h4 class="title"><a href="#0">What we are capable to usually
-                                        discovered</a></h4>
+                                <h4 class="title"><a href="#0">Tech Innovators Annual Conference</a></h4>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
+
         <!-- blog-area-end -->
 
     </main>
