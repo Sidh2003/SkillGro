@@ -13,9 +13,8 @@ Route::get('/about', function () {
     return view('Frontend.about');
 })->name('about');
 
-Route::get('/courses', function () {
-    return view('Frontend.courses');
-})->name('courses');
+Route::get('/courses', [HomeController::class, 'courses'])->name('courses');
+
 
 Route::get('/course_details', function () {
     return view('Frontend.course_details');

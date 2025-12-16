@@ -28,16 +28,18 @@
         <div class="row">
             <div class="col-12">
                 <div class="card w-100 position-relative overflow-hidden">
+
+                    <!-- Header -->
                     <div class="card-header px-4 py-3 border-bottom">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="card-title fw-semibold mb-0 lh-sm">Courses</h5>
                             <a href="{{ route('admin.courses.create') }}" class="btn btn-info">
-                                Create&nbsp;<i class="ti ti-plus"></i>
+                                Create <i class="ti ti-plus"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Filter Section -->
+                    <!-- Filters -->
                     <div class="card-body">
                         <div class="row mb-2">
 
@@ -46,7 +48,7 @@
                                 <select class="form-control select2" id="category_id">
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $item)
-                                        <option value="{{ $item->id }}">{{ $item->title }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -72,13 +74,13 @@
 
                             <div class="col-md-3 mb-2">
                                 <label class="form-label">Title</label>
-                                <input class="form-control" type="text" id="title_search" placeholder="Search Title">
+                                <input type="text" id="title_search" class="form-control" placeholder="Search Title">
                             </div>
 
                         </div>
                     </div>
 
-                    <!-- Table Section -->
+                    <!-- Table -->
                     <div class="card-body p-4">
                         <div class="table-responsive rounded-2 mb-4">
                             <table class="table table-bordered table-sm text-nowrap mb-0 align-middle" id="datatable">
@@ -89,6 +91,7 @@
                                         <th width="5%">Status</th>
                                         <th width="8%">Photo</th>
                                         <th>Title</th>
+                                        <th>Category</th>
                                         <th>Slug</th>
                                         <th>Price</th>
                                         <th>Teacher</th>
@@ -98,7 +101,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- DataTable AJAX -->
+                                    <!-- DataTable -->
                                 </tbody>
                             </table>
                         </div>
@@ -109,16 +112,15 @@
         </div>
     </section>
 
-    <!-- Modal for Show -->
+    <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="modalTitle" class="modal-title">Course Details</h5>
+                    <h5 class="modal-title">Course Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body" id="modalBody">
-                </div>
+                <div class="modal-body" id="modalBody"></div>
             </div>
         </div>
     </div>
@@ -126,7 +128,9 @@
     <script>
         $(document).ready(function() {
 
-            $('.select2').select2();
+            $('.select2').select2({
+                width: '100%'
+            });
 
             let dataTable = $('#datatable').DataTable({
                 dom: "Bfrtip",
@@ -134,8 +138,8 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '{{ route('admin.courses.data') }}',
-                    type: 'POST',
+                    url: "{{ route('admin.courses.data') }}",
+                    type: "POST",
                     data: function(d) {
                         d._token = $('meta[name=csrf-token]').attr('content');
                         d.category_id = $('#category_id').val();
@@ -159,12 +163,15 @@
                     },
                     {
                         data: 'photo',
-                        name: 'photo',
                         orderable: false,
                         searchable: false
                     },
                     {
                         data: 'title'
+                    },
+                    {
+                        data: 'category',
+                        name: 'category.name'
                     },
                     {
                         data: 'slug'
@@ -191,7 +198,7 @@
                 }]
             });
 
-            // Filter Redraw
+            // Redraw on filter change
             $('#category_id, #status, #level').on('change', function() {
                 dataTable.draw();
             });
@@ -202,47 +209,39 @@
 
             // Status Toggle
             $(document).on('change', '.course-status-switch', function() {
-                const routeKey = $(this).data('routekey');
-                const column = $(this).data('column');
-                const status = $(this).is(':checked') ? 'ACTIVE' : 'INACTIVE';
-
                 $.post("{{ route('admin.courses.change.status') }}", {
                     _token: $('meta[name=csrf-token]').attr('content'),
-                    route_key: routeKey,
-                    column: column,
-                    status: status
+                    route_key: $(this).data('routekey'),
+                    column: $(this).data('column'),
+                    status: $(this).is(':checked') ? 'ACTIVE' : 'INACTIVE'
                 }, function(res) {
                     toastr.success(res.message);
                 });
             });
 
-            // Delete
+            // Delete Course
             $(document).on('click', '.delete-course', function() {
-                const routeKey = $(this).data('routekey');
+                let routeKey = $(this).data('routekey');
 
-                if (confirm("Are you sure you want to delete this course?")) {
+                if (confirm('Are you sure you want to delete this course?')) {
                     $.ajax({
                         url: `/admin/courses/${routeKey}`,
                         type: 'DELETE',
                         data: {
                             _token: $('meta[name=csrf-token]').attr('content')
                         },
-                        success: function(data) {
-                            if (data.status === 'success') {
-                                toastr.success(data.message);
+                        success: function(res) {
+                            if (res.status === 'success') {
+                                toastr.success(res.message);
                                 dataTable.ajax.reload();
                             } else {
-                                toastr.error(data.message);
+                                toastr.error(res.message);
                             }
-                        },
-                        error: function() {
-                            toastr.error("Failed to delete course.");
                         }
                     });
                 }
             });
 
-            // Style buttons
             $(".buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel")
                 .addClass("btn btn-primary me-1");
         });

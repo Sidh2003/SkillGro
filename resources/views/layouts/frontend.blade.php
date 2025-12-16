@@ -232,12 +232,11 @@
                             <h4 class="footer__widget-title">Useful Links</h4>
                             <div class="footer__link">
                                 <ul class="list-wrap">
-                                    <li><a href="#0">Our values</a></li>
-                                    <li><a href="#0">Our advisory board</a></li>
-                                    <li><a href="#0">Our partners</a></li>
-                                    <li><a href="#0">Become a partner</a></li>
-                                    <li><a href="#0">Work at Future Learn</a></li>
-                                    <li><a href="#0">Quizlet Plus</a></li>
+                                    <li><a href="/home">Home</a></li>
+                                    <li><a href="/about">About US</a></li>
+                                    <li><a href="/contact">Courses</a></li>
+                                    <li><a href="/events">Our Events</a></li>
+                                    <li><a href="/shop">Shop</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -251,7 +250,6 @@
                                     <li><a href="#0">Become Teacher</a></li>
                                     <li><a href="/blogs">Blog</a></li>
                                     <li><a href="#0">Instructor</a></li>
-                                    <li><a href="/events">Events</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -260,7 +258,6 @@
                         <div class="footer__widget">
                             <h4 class="footer__widget-title">Get In Touch</h4>
                             <div class="footer__contact-content">
-                                <p>when an unknown printer took <br> galley type and scrambled</p>
                                 <ul class="list-wrap footer__social">
                                     <li>
                                         <a href="https://www.facebook.com/" target="_blank">

@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 use App\Mail\Thankyou;
-use App\Models\Slider;
 use App\Models\Enquiry;
-use App\Models\Service;
+use App\Models\Course;
+use App\Models\Category;
 use App\Mail\ContactMail;
-use App\Rules\CustomCaptcha;
 use Illuminate\Http\Request;
-use App\Models\ServiceVisitor;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
@@ -27,7 +25,55 @@ class HomeController extends Controller
     }
     public function courses(Request $request)
     {
-        return view('Frontend.courses');
+        // Filters from URL
+        $categorySlug = $request->category;
+        $level = $request->level;
+        $language = $request->language;
+
+        // Base query
+        $coursesQuery = Course::with('category')
+            ->where('status', 'ACTIVE');
+
+        // Category filter
+        if ($categorySlug) {
+            $category = Category::where('slug', $categorySlug)->first();
+            if ($category) {
+                $coursesQuery->where('category_id', $category->id);
+            }
+        }
+
+        // Skill level filter
+        if ($level) {
+            $coursesQuery->where('level', $level);
+        }
+
+        // Language filter
+        if ($language) {
+            $coursesQuery->where('language', $language);
+        }
+
+        // Fetch courses
+        $courses = $coursesQuery->latest()->get();
+
+        // Sidebar data
+        $categories = Category::withCount('courses')->get();
+
+        $levels = Course::select('level')
+            ->whereNotNull('level')
+            ->distinct()
+            ->pluck('level');
+
+        $languages = Course::select('language')
+            ->whereNotNull('language')
+            ->distinct()
+            ->pluck('language');
+
+        return view('Frontend.courses', compact(
+            'courses',
+            'categories',
+            'levels',
+            'languages'
+        ));
     }
 
     public function course_details(Request $request)

@@ -71,12 +71,12 @@
                     <div class="col-lg-3">
                         <div class="dashboard__sidebar-wrap">
                             <div class="dashboard__sidebar-title mb-20">
-                                <h6 class="title">Welcome, Emily Hannah</h6>
+                                <h6 class="title">Welcome, Siddhesh Sonavane</h6>
                             </div>
                             <nav class="dashboard__sidebar-menu">
                                 <ul class="list-wrap">
                                     <li class="active">
-                                        <a href="#0">
+                                        <a href="/dashbord">
                                             <i class="fas fa-home"></i>
                                             Dashboard
                                         </a>

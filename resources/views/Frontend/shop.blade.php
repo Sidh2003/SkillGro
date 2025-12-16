@@ -63,18 +63,18 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img01.jpg" alt="img">
                                         </a>
                                         <span class="flash-sale">Sale</span>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">Garden Adeline Life</a></h3>
+                                        <h3 class="title"><a href="/shop_details">Garden Adeline Life</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -90,17 +90,17 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img02.jpg" alt="img">
                                         </a>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">Time to Explore</a></h3>
+                                        <h3 class="title"><a href="/shop_details">Time to Explore</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -116,18 +116,18 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img03.jpg" alt="img">
                                         </a>
                                         <span class="flash-sale">Sale</span>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">Wildlife Adventure</a></h3>
+                                        <h3 class="title"><a href="/shop_details">Wildlife Adventure</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -143,18 +143,18 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img04.jpg" alt="img">
                                         </a>
                                         <span class="flash-sale hot">Hot!</span>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">Ketut Susilo Sky</a></h3>
+                                        <h3 class="title"><a href="/shop_details">Ketut Susilo Sky</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -170,18 +170,18 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img05.jpg" alt="img">
                                         </a>
                                         <span class="flash-sale">Sale</span>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">The Illusion Design</a></h3>
+                                        <h3 class="title"><a href="/shop_details">The Illusion Design</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -197,17 +197,17 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img06.jpg" alt="img">
                                         </a>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">The Fashion Edits</a></h3>
+                                        <h3 class="title"><a href="/shop_details">The Fashion Edits</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -223,18 +223,18 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img07.jpg" alt="img">
                                         </a>
                                         <span class="flash-sale">Sale</span>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">The Business Women</a></h3>
+                                        <h3 class="title"><a href="/shop_details">The Business Women</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -250,17 +250,17 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img08.jpg" alt="img">
                                         </a>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">Online Makeup Tutorial</a></h3>
+                                        <h3 class="title"><a href="/shop_details">Online Makeup Tutorial</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -276,18 +276,18 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop-item">
                                     <div class="shop-thumb">
-                                        <a href="#0">
+                                        <a href="/shop_details">
                                             <img src="/frontend/assets/img/shop/shop_img09.jpg" alt="img">
                                         </a>
                                         <span class="flash-sale">Sale</span>
                                         <ul class="list-wrap shop-action">
-                                            <li><a href="#0"><i class="fas fa-shopping-cart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-heart"></i></a></li>
-                                            <li><a href="#0"><i class="far fa-eye"></i></a></li>
+                                            <li><a href="/shop_details"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="/shop_details"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="shop-content">
-                                        <h3 class="title"><a href="#0">The Bad Feelings</a></h3>
+                                        <h3 class="title"><a href="/shop_details">The Bad Feelings</a></h3>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -304,10 +304,10 @@
                     </div>
                     {{-- <nav class="pagination__wrap mt-40">
                         <ul class="list-wrap">
-                            <li class="active"><a href="#0">1</a></li>
-                            <li><a href="#0">2</a></li>
-                            <li><a href="#0">3</a></li>
-                            <li><a href="#0">4</a></li>
+                            <li class="active"><a href="/shop_details">1</a></li>
+                            <li><a href="/shop_details">2</a></li>
+                            <li><a href="/shop_details">3</a></li>
+                            <li><a href="/shop_details">4</a></li>
                         </ul>
                     </nav> --}}
                 </div>

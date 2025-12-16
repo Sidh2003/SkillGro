@@ -13,94 +13,78 @@ use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
+    /* =========================
+        INDEX
+    ========================== */
     public function index()
     {
-        $courses = Course::all();
-        $teachers = Course::distinct()->pluck('teacher');
         $categories = Category::all();
-        return view('Admin.Courses.index', compact('courses', 'teachers', 'categories'));
+        return view('Admin.Courses.index', compact('categories'));
     }
 
+    /* =========================
+        DATATABLE DATA
+    ========================== */
     public function data(Request $request)
     {
-        $query = Course::query();
+        $query = Course::with('category');
 
         if ($request->filled('category_id')) {
             $query->where('category_id', $request->category_id);
         }
 
-        if ($request->title_id) {
-            $query->where('id', $request->title_id);
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
         }
 
-        if ($request->has('status') && $request->status) {
-            $query->where('status', $request->status);
+        if ($request->filled('level')) {
+            $query->where('level', $request->level);
+        }
+
+        if ($request->filled('title_search')) {
+            $query->where('title', 'like', '%' . $request->title_search . '%');
         }
 
         $query->orderByDesc('id');
 
         return DataTables::eloquent($query)
-            ->editColumn('category', function ($course) {
-                return $course->category ? $course->category->name : 'N/A';
-            })
-            ->editColumn('title', function ($course) {
-                return $course->title ?? 'N/A';
-            })
+            ->addIndexColumn()
 
-            // ⭐ FINAL FIXED IMAGE DISPLAY ⭐
             ->editColumn('photo', function ($course) {
-                if (!$course->photo) {
-                    return '<img src="' . asset('default-image.jpg') . '" width="80" height="80" style="object-fit:cover;border-radius:8px;">';
-                }
+                $url = $course->photo
+                    ? asset('storage/' . $course->photo)
+                    : asset('default-image.jpg');
 
-                // Correct path (guaranteed working)
-                $photoUrl = asset('storage/' . $course->photo);
-
-                return '<img src="' . $photoUrl . '" width="80" height="80" style="object-fit:cover;border-radius:8px;">';
-            })
-
-            ->editColumn('price', function ($course) {
-                return $course->price ?? 'N/A';
-            })
-
-            ->editColumn('teacher', function ($course) {
-                return $course->teacher ?? 'N/A';
+                return '<img src="' . $url . '" width="70" height="70" style="border-radius:8px;object-fit:cover;">';
             })
 
             ->editColumn('status', function ($course) {
-                return '<div class="form-check form-switch">
-                        <input class="form-check-input course-status-switch" type="checkbox" ' .
-                    ($course->status === 'ACTIVE' ? 'checked' : '') . ' data-id="' . $course->id . '">
-                    </div>';
+                return '
+                <div class="form-check form-switch">
+                    <input class="form-check-input course-status-switch"
+                        type="checkbox"
+                        data-id="' . $course->id . '"
+                        ' . ($course->status === 'ACTIVE' ? 'checked' : '') . '>
+                </div>';
             })
 
             ->addColumn('action', function ($course) {
-                $edit = '<a href="' . route('admin.courses.edit', ['course' => $course->id]) . '" class="badge bg-warning fs-1">
-                            <i class="fa fa-edit"></i>
-                         </a>';
-
-                $delete = '<a href="javascript:void(0);" class="badge bg-danger fs-1 delete-course" data-id="' . $course->id . '">
-                            <i class="fa fa-trash"></i>
-                           </a>';
-
-                return $edit . ' ' . $delete;
+                return '
+                <a href="' . route('admin.courses.edit', $course->id) . '" class="badge bg-warning">
+                    <i class="fa fa-edit"></i>
+                </a>
+                <a href="javascript:void(0)" class="badge bg-danger delete-course" data-id="' . $course->id . '">
+                    <i class="fa fa-trash"></i>
+                </a>';
             })
 
-            ->addIndexColumn()
             ->rawColumns(['photo', 'status', 'action'])
-            ->setRowId('id')
             ->make(true);
     }
 
-    public function list()
-    {
-        $courses = Course::all();
-        return response()->json([
-            'status' => 'success',
-            'list' => $courses
-        ], 200);
-    }
-
+    /* =========================
+        CREATE
+    ========================== */
     public function create()
     {
         $categories = Category::all();
@@ -108,9 +92,13 @@ class CourseController extends Controller
         return view('Admin.Courses.form', compact('categories', 'course'));
     }
 
+    /* =========================
+        STORE
+    ========================== */
     public function store(Request $request)
     {
-        $rules = [
+        $validated = $request->validate([
+            'category_id' => 'required|exists:categories,id',
             'title' => 'required|string|max:255',
             'slug' => 'nullable|alpha_dash|unique:courses,slug',
             'price' => 'nullable|numeric',
@@ -127,44 +115,48 @@ class CourseController extends Controller
             'language' => 'nullable|string|max:255',
             'status' => 'nullable|in:ACTIVE,INACTIVE',
             'home_featured' => 'nullable|in:ACTIVE,INACTIVE',
-        ];
-
-        $validated = $request->validate($rules);
+        ]);
 
         $course = new Course();
         $course->fill($validated);
 
-        if (!$course->slug && $course->title) {
+        if (!$course->slug) {
             $course->slug = Str::slug($course->title) . '-' . Str::random(6);
         }
 
-        // ⭐ FIXED IMAGE STORAGE ⭐
         if ($request->hasFile('photo')) {
             $course->photo = $request->photo->store('photos', 'public');
         }
 
-        if (Auth::check()) {
-            $course->created_by = Auth::id();
+        if ($request->has('pointers')) {
+            $course->pointers = json_encode(array_filter($request->pointers));
         }
 
+        $course->created_by = Auth::id();
         $course->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Course created successfully',
-            'course' => $course
+            'message' => 'Course created successfully'
         ], 201);
     }
 
+    /* =========================
+        EDIT
+    ========================== */
     public function edit(Course $course)
     {
         $categories = Category::all();
         return view('Admin.Courses.form', compact('categories', 'course'));
     }
 
+    /* =========================
+        UPDATE
+    ========================== */
     public function update(Request $request, Course $course)
     {
-        $rules = [
+        $validated = $request->validate([
+            'category_id' => 'required|exists:categories,id',
             'title' => 'required|string|max:255',
             'slug' => 'nullable|alpha_dash|unique:courses,slug,' . $course->id,
             'price' => 'nullable|numeric',
@@ -181,99 +173,69 @@ class CourseController extends Controller
             'language' => 'nullable|string|max:255',
             'status' => 'nullable|in:ACTIVE,INACTIVE',
             'home_featured' => 'nullable|in:ACTIVE,INACTIVE',
-        ];
-
-        $validated = $request->validate($rules);
+        ]);
 
         $course->fill($validated);
 
-        if (!$course->slug && $course->title) {
+        if (!$course->slug) {
             $course->slug = Str::slug($course->title) . '-' . Str::random(6);
         }
 
-        // ⭐ FIXED UPDATE IMAGE ⭐
         if ($request->hasFile('photo')) {
             if ($course->photo && Storage::disk('public')->exists($course->photo)) {
                 Storage::disk('public')->delete($course->photo);
             }
-
             $course->photo = $request->photo->store('photos', 'public');
         }
 
-        if (Auth::check()) {
-            $course->updated_by = Auth::id();
+        if ($request->has('pointers')) {
+            $course->pointers = json_encode(array_filter($request->pointers));
         }
 
+        $course->updated_by = Auth::id();
         $course->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Course updated successfully',
-            'course' => $course
+            'message' => 'Course updated successfully'
         ], 200);
     }
 
-    public function changeHomeFeaturedStatus(Request $request)
-    {
-        $request->validate([
-            'id' => 'required|integer|exists:courses,id',
-            'status' => 'required|in:ACTIVE,INACTIVE'
-        ]);
-
-        $course = Course::findOrFail($request->id);
-        $course->home_featured = $request->status;
-        $course->save();
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Home featured status updated',
-            'course' => $course
-        ], 200);
-    }
-
+    /* =========================
+        STATUS CHANGE
+    ========================== */
     public function changeStatus(Request $request)
     {
         $request->validate([
-            'id' => 'required|integer|exists:courses,id',
+            'id' => 'required|exists:courses,id',
             'status' => 'required|in:ACTIVE,INACTIVE'
         ]);
 
         $course = Course::findOrFail($request->id);
         $course->status = $request->status;
-
-        if (Auth::check()) {
-            $course->updated_by = Auth::id();
-        }
-
+        $course->updated_by = Auth::id();
         $course->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Status updated',
-            'course' => $course
-        ], 200);
+            'message' => 'Status updated successfully'
+        ]);
     }
 
+    /* =========================
+        DELETE
+    ========================== */
     public function destroy(Course $course)
     {
-        try {
-            if ($course->photo && Storage::disk('public')->exists($course->photo)) {
-                Storage::disk('public')->delete($course->photo);
-            }
-
-            $course->delete();
-
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Course deleted successfully.'
-            ]);
-
-        } catch (\Exception $e) {
-
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Failed to delete course: ' . $e->getMessage()
-            ], 500);
+        if ($course->photo && Storage::disk('public')->exists($course->photo)) {
+            Storage::disk('public')->delete($course->photo);
         }
+
+        $course->delete();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Course deleted successfully'
+        ]);
     }
 }

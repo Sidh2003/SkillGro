@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\BaseModel;
@@ -44,6 +44,7 @@ class Course extends BaseModel
         return $this->belongsToMany(Category::class);
     }
 
+
     public function getPhotoLinkAttribute()
     {
         return $this->photo ? asset(Storage::url($this->photo)) : null;
@@ -56,6 +57,4 @@ class Course extends BaseModel
             'publish_date' => formatDate($this->publish_date, 'F d Y')
         ];
     }
-
-
 }
