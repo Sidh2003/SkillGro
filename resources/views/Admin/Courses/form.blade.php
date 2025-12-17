@@ -88,6 +88,8 @@
                                 @endif
                             </div>
 
+
+
                             <!-- Short Description -->
                             <div class="col-md-12 mb-3">
                                 <label>Short Description</label>
@@ -118,10 +120,20 @@
                             <!-- Duration -->
                             <div class="col-md-4 mb-3">
                                 <label>Duration</label>
-                                <input type="text" name="duration" class="form-control"
-                                    value="{{ $course->duration ?? '' }}" placeholder="e.g. 3 Months...">
+                                <select name="duration" class="form-control">
+                                    <option value="">Select Duration</option>
+
+                                    @for ($i = 1; $i <= 12; $i++)
+                                        <option value="{{ $i }} Month{{ $i > 1 ? 's' : '' }}"
+                                            {{ ($course->duration ?? '') === $i . ' Month' . ($i > 1 ? 's' : '') ? 'selected' : '' }}>
+                                            {{ $i }} Month{{ $i > 1 ? 's' : '' }}
+                                        </option>
+                                    @endfor
+
+                                </select>
                                 <div id="duration-error" class="text-danger mt-1"></div>
                             </div>
+
 
                             <!-- Lessons -->
                             <div class="col-md-4 mb-3">
@@ -142,18 +154,30 @@
                             <!-- Weekly Test -->
                             <div class="col-md-4 mb-3">
                                 <label>Weekly Test</label>
-                                <input type="text" name="weekly_test" class="form-control"
-                                    value="{{ $course->weekly_test ?? '' }}">
+                                <select name="weekly_test" class="form-control">
+                                    <option value="">Select Option</option>
+                                    <option value="Yes" {{ ($course->weekly_test ?? '') === 'Yes' ? 'selected' : '' }}>
+                                        Yes</option>
+                                    <option value="No" {{ ($course->weekly_test ?? '') === 'No' ? 'selected' : '' }}>
+                                        No</option>
+                                </select>
                                 <div id="weekly_test-error" class="text-danger mt-1"></div>
                             </div>
+
 
                             <!-- Certificate -->
                             <div class="col-md-4 mb-3">
                                 <label>Certificate</label>
-                                <input type="text" name="certificate" class="form-control"
-                                    value="{{ $course->certificate ?? '' }}">
+                                <select name="certificate" class="form-control">
+                                    <option value="">Select Option</option>
+                                    <option value="Yes" {{ ($course->certificate ?? '') === 'Yes' ? 'selected' : '' }}>
+                                        Yes</option>
+                                    <option value="No" {{ ($course->certificate ?? '') === 'No' ? 'selected' : '' }}>
+                                        No</option>
+                                </select>
                                 <div id="certificate-error" class="text-danger mt-1"></div>
                             </div>
+
 
                             <!-- Language -->
                             <div class="col-md-4 mb-3">

@@ -1,495 +1,243 @@
 @extends('layouts.frontend')
+
 @section('title')
-    Course Detailss | SkillGro
+    {{ $course->title }} | SkillGro
 @endsection
+
 @section('content')
+
+    <Style>
+        @media (max-width: 576px) {
+            .courses__details-thumb {
+                aspect-ratio: 16/9;
+                /* Slightly smaller ratio for mobile */
+            }
+        }
+    </Style>
+    <!-- Breadcrumb -->
     <section class="breadcrumb__area breadcrumb__bg" data-background="/frontend/assets/img/bg/breadcrumb_bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb__content">
-                        <h3 class="title">All Courses</h3>
+                        <h3 class="title">{{ $course->title }}</h3>
                         <nav class="breadcrumb">
-                            <span property="itemListElement" typeof="ListItem">
-                                <a href="/">Home</a>
-                            </span>
+                            <a href="{{ url('/') }}">Home</a>
                             <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
-                            <span property="itemListElement" typeof="ListItem">Courses</span>
+                            <a href="{{ route('courses') }}">Courses</a>
+                            <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
+                            <span>{{ $course->title }}</span>
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="breadcrumb__shape-wrap">
-            <img src="/frontend/assets/img/others/breadcrumb_shape01.svg" alt="img" class="alltuchtopdown">
-            <img src="/frontend/assets/img/others/breadcrumb_shape02.svg" alt="img" data-aos="fade-right"
-                data-aos-delay="300">
-            <img src="/frontend/assets/img/others/breadcrumb_shape03.svg" alt="img" data-aos="fade-up"
-                data-aos-delay="400">
-            <img src="/frontend/assets/img/others/breadcrumb_shape04.svg" alt="img" data-aos="fade-down-left"
-                data-aos-delay="400">
-            <img src="/frontend/assets/img/others/breadcrumb_shape05.svg" alt="img" data-aos="fade-left"
-                data-aos-delay="400">
-        </div>
     </section>
-    <!-- breadcrumb-area-end -->
+
+    <!-- Course Details -->
     <section class="courses__details-area section-py-120">
         <div class="container">
             <div class="row">
+
+                <!-- LEFT CONTENT -->
                 <div class="col-xl-9 col-lg-8">
-                    <div class="courses__details-thumb">
-                        <img src="/frontend/assets/img/courses/courses_details.jpg" alt="img">
+
+                    <!-- Course Image -->
+                    <div class="courses__details-thumb mb-4"
+                        style="width:100%; max-width:1049px; aspect-ratio:1049/570; overflow:hidden;">
+                        <img src="{{ $course->photo ? asset('storage/' . $course->photo) : asset('frontend/assets/img/courses/courses_details.jpg') }}"
+                            alt="{{ $course->title }}" style="width:100%; height:100%; object-fit:cover;">
                     </div>
+
+
+
+                    <!-- Course Meta & Title -->
                     <div class="courses__details-content">
-                        <ul class="courses__item-meta list-wrap">
+                        <ul class="courses__item-meta list-wrap mb-3">
                             <li class="courses__item-tag">
-                                <a href="https://html.themegenix.com/skillgro/course.html">Development</a>
+                                <a href="#">{{ $course->category->name ?? 'General' }}</a>
                             </li>
-                            <li class="avg-rating"><i class="fas fa-star"></i> (4.5 Reviews)</li>
+                            <li class="avg-rating">
+                                <i class="fas fa-star"></i> (4.5 Reviews)
+                            </li>
                         </ul>
-                        <h2 class="title">Resolving Conflicts Between Designers And Engineers</h2>
-                        <div class="courses__details-meta">
+
+                        <h2 class="title mb-3">{{ $course->title }}</h2>
+
+                        <div class="courses__details-meta mb-4">
                             <ul class="list-wrap">
                                 <li class="author-two">
                                     <img src="/frontend/assets/img/courses/course_author001.png" alt="img">
-                                    By
-                                    <a href="#0">David Millar</a>
+                                    By <a href="#0">{{ $course->teacher ?? 'SkillGro' }}</a>
                                 </li>
-                                <li class="date"><i class="flaticon-calendar"></i>24/07/2024</li>
-                                <li><i class="flaticon-mortarboard"></i>2,250 Students</li>
+                                <li class="date">
+                                    <i class="flaticon-calendar"></i>
+                                    {{ $course->created_at->format('d/m/Y') }}
+                                </li>
+                                <li>
+                                    <i class="flaticon-mortarboard"></i>
+                                    {{ $course->lesson ?? 0 }} Lessons
+                                </li>
                             </ul>
                         </div>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="overview-tab" data-bs-toggle="tab"
-                                    data-bs-target="#overview-tab-pane" type="button" role="tab"
-                                    aria-controls="overview-tab-pane" aria-selected="true">Overview</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab"
-                                    data-bs-target="#curriculum-tab-pane" type="button" role="tab"
-                                    aria-controls="curriculum-tab-pane" aria-selected="false">Curriculum</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="instructors-tab" data-bs-toggle="tab"
-                                    data-bs-target="#instructors-tab-pane" type="button" role="tab"
-                                    aria-controls="instructors-tab-pane" aria-selected="false">Instructors</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab"
-                                    data-bs-target="#reviews-tab-pane" type="button" role="tab"
-                                    aria-controls="reviews-tab-pane" aria-selected="false">reviews</button>
+
+                        <!-- Tabs -->
+                        <ul class="nav nav-tabs mb-4" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active">Overview</button>
                             </li>
                         </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel"
-                                aria-labelledby="overview-tab" tabindex="0">
-                                <div class="courses__overview-wrap">
-                                    <h3 class="title">Course Description</h3>
-                                    <p>Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua Quis ipsum suspendisse ultrices gravida.
-                                        Risus commodo viverra maecenas accumsan lacus vel facilisis.dolor sit amet,
-                                        consectetur adipiscing elited do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua.</p>
-                                    <h3 class="title">What you'll learn in this course?</h3>
-                                    <p>Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua Quis ipsum suspendisse ultrices gravida.
-                                        Risus commodo viverra maecenas accumsan.</p>
-                                    <ul class="about__info-list list-wrap">
-                                        <li class="about__info-list-item">
-                                            <i class="flaticon-angle-right"></i>
-                                            <p class="content">Work with color & Gradients & Grids</p>
-                                        </li>
-                                        <li class="about__info-list-item">
-                                            <i class="flaticon-angle-right"></i>
-                                            <p class="content">All the useful shortcuts</p>
-                                        </li>
-                                        <li class="about__info-list-item">
-                                            <i class="flaticon-angle-right"></i>
-                                            <p class="content">Be able to create Flyers, Brochures, Advertisements</p>
-                                        </li>
-                                        <li class="about__info-list-item">
-                                            <i class="flaticon-angle-right"></i>
-                                            <p class="content">How to work with Images & Text</p>
-                                        </li>
-                                    </ul>
-                                    <p class="last-info">Morem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua Quis ipsum suspendisse
-                                        ultrices gravida. Risus commodo viverra maecenas accumsan.Dorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magn.</p>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel"
-                                aria-labelledby="curriculum-tab" tabindex="0">
-                                <div class="courses__curriculum-wrap">
-                                    <h3 class="title">Course Curriculum</h3>
-                                    <p>Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua Quis ipsum suspendisse ultrices gravida.
-                                        Risus commodo viverra maecenas accumsan.</p>
-                                    <div class="accordion" id="accordionExample">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingOne">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne" aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                    Introduction
-                                                </button>
-                                            </h2>
-                                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <ul class="list-wrap">
-                                                        <li class="course-item open-item">
-                                                            <a href="https://www.youtube.com/watch?v=b2Az7_lLh3g"
-                                                                class="course-item-link popup-video">
-                                                                <span class="item-name">Course Installation</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">03:03</span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="course-item">
-                                                            <a href="#0" class="course-item-link">
-                                                                <span class="item-name">Create a Simple React App</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">07:48</span>
-                                                                    <span class="item-meta course-item-status">
-                                                                        <img src="/frontend/assets/img/icons/lock.svg"
-                                                                            alt="icon">
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="course-item">
-                                                            <a href="#0" class="course-item-link">
-                                                                <span class="item-name">React for the Rest of us</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">10:48</span>
-                                                                    <span class="item-meta course-item-status">
-                                                                        <img src="/frontend/assets/img/icons/lock.svg"
-                                                                            alt="icon">
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingTwo">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                    aria-expanded="false" aria-controls="collapseTwo">
-                                                    Capacitance and Inductance
-                                                </button>
-                                            </h2>
-                                            <div id="collapseTwo" class="accordion-collapse collapse"
-                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <ul class="list-wrap">
-                                                        <li class="course-item">
-                                                            <a href="#0" class="course-item-link">
-                                                                <span class="item-name">Course Installation</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">07:48</span>
-                                                                    <span class="item-meta course-item-status">
-                                                                        <img src="/frontend/assets/img/icons/lock.svg"
-                                                                            alt="icon">
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="course-item">
-                                                            <a href="#0" class="course-item-link">
-                                                                <span class="item-name">Create a Simple React App</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">07:48</span>
-                                                                    <span class="item-meta course-item-status">
-                                                                        <img src="/frontend/assets/img/icons/lock.svg"
-                                                                            alt="icon">
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="course-item">
-                                                            <a href="#0" class="course-item-link">
-                                                                <span class="item-name">React for the Rest of us</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">10:48</span>
-                                                                    <span class="item-meta course-item-status">
-                                                                        <img src="/frontend/assets/img/icons/lock.svg"
-                                                                            alt="icon">
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingThree">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                    aria-expanded="false" aria-controls="collapseThree">
-                                                    Final Audit
-                                                </button>
-                                            </h2>
-                                            <div id="collapseThree" class="accordion-collapse collapse"
-                                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <ul class="list-wrap">
-                                                        <li class="course-item">
-                                                            <a href="#0" class="course-item-link">
-                                                                <span class="item-name">Course Installation</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">07:48</span>
-                                                                    <span class="item-meta course-item-status">
-                                                                        <img src="/frontend/assets/img/icons/lock.svg"
-                                                                            alt="icon">
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="course-item">
-                                                            <a href="#0" class="course-item-link">
-                                                                <span class="item-name">Create a Simple React App</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">07:48</span>
-                                                                    <span class="item-meta course-item-status">
-                                                                        <img src="/frontend/assets/img/icons/lock.svg"
-                                                                            alt="icon">
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li class="course-item">
-                                                            <a href="#0" class="course-item-link">
-                                                                <span class="item-name">React for the Rest of us</span>
-                                                                <div class="course-item-meta">
-                                                                    <span class="item-meta duration">10:48</span>
-                                                                    <span class="item-meta course-item-status">
-                                                                        <img src="/frontend/assets/img/icons/lock.svg"
-                                                                            alt="icon">
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="instructors-tab-pane" role="tabpanel"
-                                aria-labelledby="instructors-tab" tabindex="0">
-                                <div class="courses__instructors-wrap">
-                                    <div class="courses__instructors-thumb">
-                                        <img src="/frontend/assets/img/courses/course_instructors.png" alt="img">
-                                    </div>
-                                    <div class="courses__instructors-content">
-                                        <h2 class="title">Mark Jukarberg</h2>
-                                        <span class="designation">UX Design Lead</span>
-                                        <p class="avg-rating"><i class="fas fa-star"></i>(4.8 Ratings)</p>
-                                        <p>Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua Quis ipsum suspendisse ultrices
-                                            gravida. Risus commodo viverra maecenas accumsan.</p>
-                                        <div class="instructor__social">
-                                            <ul class="list-wrap justify-content-start">
-                                                <li><a href="#0"><i class="fab fa-facebook-f"></i></a>
-                                                </li>
-                                                <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-whatsapp"></i></a>
-                                                </li>
-                                                <li><a href="#0"><i class="fab fa-instagram"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="reviews-tab-pane" role="tabpanel"
-                                aria-labelledby="reviews-tab" tabindex="0">
-                                <div class="courses__rating-wrap">
-                                    <h2 class="title">Reviews</h2>
-                                    <div class="course-rate">
-                                        <div class="course-rate__summary">
-                                            <div class="course-rate__summary-value">4.8</div>
-                                            <div class="course-rate__summary-stars">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <div class="course-rate__summary-text">
-                                                12 Ratings
-                                            </div>
-                                        </div>
-                                        <div class="course-rate__details">
-                                            <div class="course-rate__details-row">
-                                                <div class="course-rate__details-row-star">
-                                                    5
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="course-rate__details-row-value">
-                                                    <div class="rating-gray"></div>
-                                                    <div class="rating" style="width:80%;" title="80%"></div>
-                                                    <span class="rating-count">2</span>
-                                                </div>
-                                            </div>
-                                            <div class="course-rate__details-row">
-                                                <div class="course-rate__details-row-star">
-                                                    4
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="course-rate__details-row-value">
-                                                    <div class="rating-gray"></div>
-                                                    <div class="rating" style="width:50%;" title="50%"></div>
-                                                    <span class="rating-count">1</span>
-                                                </div>
-                                            </div>
-                                            <div class="course-rate__details-row">
-                                                <div class="course-rate__details-row-star">
-                                                    3
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="course-rate__details-row-value">
-                                                    <div class="rating-gray"></div>
-                                                    <div class="rating" style="width:0%;" title="0%"></div>
-                                                    <span class="rating-count">0</span>
-                                                </div>
-                                            </div>
-                                            <div class="course-rate__details-row">
-                                                <div class="course-rate__details-row-star">
-                                                    2
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="course-rate__details-row-value">
-                                                    <div class="rating-gray"></div>
-                                                    <div class="rating" style="width:0%;" title="0%"></div>
-                                                    <span class="rating-count">0</span>
-                                                </div>
-                                            </div>
-                                            <div class="course-rate__details-row">
-                                                <div class="course-rate__details-row-star">
-                                                    1
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <div class="course-rate__details-row-value">
-                                                    <div class="rating-gray"></div>
-                                                    <div class="rating" style="width:0%;" title="0%"></div>
-                                                    <span class="rating-count">0</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="course-review-head">
-                                        <div class="review-author-thumb">
-                                            <img src="/frontend/assets/img/courses/review-author.png" alt="img">
-                                        </div>
-                                        <div class="review-author-content">
-                                            <div class="author-name">
-                                                <h5 class="name">Jura Hujaor <span>2 Days ago</span></h5>
-                                                <div class="author-rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                            </div>
-                                            <h4 class="title">The best LMS Design System</h4>
-                                            <p>Maximus ligula eleifend id nisl quis interdum. Sed malesuada tortor non
-                                                turpis semper bibendum nisi porta, malesuada risus nonerviverra dolor.
-                                                Vestibulum ante ipsum primis in faucibus.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <!-- Overview -->
+                        <div class="courses__overview-wrap">
+
+                            <!-- Course Description (EditorJS JSON Rendered) -->
+                            <h3 class="title">Course Description</h3>
+                            @php
+                                $description = json_decode($course->course_description, true);
+                            @endphp
+
+                            @isset($description['blocks'])
+                                @foreach ($description['blocks'] as $block)
+                                    @if ($block['type'] === 'paragraph')
+                                        <p>{!! $block['data']['text'] !!}</p>
+                                    @elseif($block['type'] === 'header')
+                                        <h3>{!! $block['data']['text'] !!}</h3>
+                                    @elseif($block['type'] === 'list')
+                                        <ul>
+                                            @foreach ($block['data']['items'] as $item)
+                                                <li>{!! $item['content'] !!}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                @endforeach
+                            @endisset
+
+                            <!-- Learning Points -->
+                            <h3 class="title mt-4">What you'll learn in this course?</h3>
+                            <ul class="about__info-list list-wrap">
+                                @forelse(json_decode($course->pointers, true) ?? [] as $pointer)
+                                    <li class="about__info-list-item">
+                                        <i class="flaticon-angle-right"></i>
+                                        <p class="content">{!! $pointer !!}</p>
+                                    </li>
+                                @empty
+                                    <li class="about__info-list-item">
+                                        <i class="flaticon-angle-right"></i>
+                                        <p class="content">No learning points available</p>
+                                    </li>
+                                @endforelse
+                            </ul>
+
+                            <!-- Short Description -->
+                            @if ($course->short_description)
+                                <p class="last-info mt-3">{!! nl2br(e($course->short_description)) !!}</p>
+                            @endif
+
                         </div>
                     </div>
                 </div>
+
+                <!-- RIGHT SIDEBAR -->
                 <div class="col-xl-3 col-lg-4">
                     <div class="courses__details-sidebar">
-                        <div class="courses__details-video">
-                            <img src="/frontend/assets/img/courses/course_thumb02.jpg" alt="img">
-                            <a href="https://www.youtube.com/watch?v=YwrHGratByU" class="popup-video"><i
-                                    class="fas fa-play"></i></a>
-                        </div>
-                        <div class="courses__cost-wrap">
+
+                        <!-- Price -->
+                        <div class="courses__cost-wrap mb-4">
                             <span>This Course Fee:</span>
-                            <h2 class="title">$18.00 <del>$32.00</del></h2>
+                            <h2 class="title">
+                                ₹{{ $course->price ?? 'Free' }}
+                            </h2>
                         </div>
-                        <div class="courses__information-wrap">
+
+                        <!-- Course Info -->
+                        <div class="courses__information-wrap mb-4">
                             <h5 class="title">Course includes:</h5>
                             <ul class="list-wrap">
                                 <li>
-                                    <img src="/frontend/assets/img/icons/course_icon01.svg" alt="img"
-                                        class="injectable">
-                                    Level
-                                    <span>Expert</span>
+                                    <img src="/frontend/assets/img/icons/course_icon01.svg" class="injectable">
+                                    Level <span>{{ $course->level ?? '-' }}</span>
                                 </li>
                                 <li>
-                                    <img src="/frontend/assets/img/icons/course_icon02.svg" alt="img"
-                                        class="injectable">
-                                    Duration
-                                    <span>11h 20m</span>
+                                    <img src="/frontend/assets/img/icons/course_icon02.svg" class="injectable">
+                                    Duration <span>{{ $course->duration ?? '-' }}</span>
                                 </li>
                                 <li>
-                                    <img src="/frontend/assets/img/icons/course_icon03.svg" alt="img"
-                                        class="injectable">
-                                    Lessons
-                                    <span>12</span>
+                                    <img src="/frontend/assets/img/icons/course_icon03.svg" class="injectable">
+                                    Lessons <span>{{ $course->lesson ?? 0 }}</span>
                                 </li>
                                 <li>
-                                    <img src="/frontend/assets/img/icons/course_icon04.svg" alt="img"
-                                        class="injectable">
-                                    Quizzes
-                                    <span>145</span>
+                                    <img src="/frontend/assets/img/icons/course_icon04.svg" class="injectable">
+                                    Quizzes <span>{{ $course->quizzes ?? 0 }}</span>
                                 </li>
                                 <li>
-                                    <img src="/frontend/assets/img/icons/course_icon05.svg" alt="img"
-                                        class="injectable">
-                                    Certifications
-                                    <span>Yes</span>
+                                    <img src="/frontend/assets/img/icons/course_icon05.svg" class="injectable">
+                                    Certificate <span>{{ $course->certificate ?? 'No' }}</span>
                                 </li>
                                 <li>
-                                    <img src="/frontend/assets/img/icons/course_icon06.svg" alt="img"
-                                        class="injectable">
-                                    Graduation
-                                    <span>25K</span>
+                                    <img src="/frontend/assets/img/icons/course_icon05.svg" class="injectable">
+                                    Weekly Test <span>{{ $course->weekly_test ?? 'No' }}</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="courses__payment">
+
+                        <!-- Payment -->
+                        <div class="courses__payment mb-4">
                             <h5 class="title">Secure Payment:</h5>
-                            <img src="/frontend/assets/img/others/payment.png" alt="img">
+                            <img src="/frontend/my-img/payment-method.png" alt="img">
                         </div>
-                        <div class="courses__details-social">
+
+                        <!-- Share -->
+                        <div class="courses__details-social mb-4">
                             <h5 class="title">Share this course:</h5>
                             <ul class="list-wrap">
-                                <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#0"><i class="fab fa-whatsapp"></i></a></li>
-                                <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#0"><i class="fab fa-youtube"></i></a></li>
+                                @php
+                                    $courseUrl = urlencode(request()->fullUrl());
+                                    $courseTitle = urlencode($course->title);
+                                @endphp
+                                <!-- Facebook -->
+                                <li>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ $courseUrl }}"
+                                        target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <!-- Twitter -->
+                                <li>
+                                    <a href="https://twitter.com/intent/tweet?text={{ $courseTitle }}&url={{ $courseUrl }}"
+                                        target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <!-- WhatsApp -->
+                                <li>
+                                    <a href="https://api.whatsapp.com/send?text={{ $courseTitle }}%20{{ $courseUrl }}"
+                                        target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </li>
+                                <!-- Instagram -->
+                                <li>
+                                    <!-- Instagram doesn't allow direct URL sharing, you can link to your profile or remove -->
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
+
+
+                        <!-- Enroll -->
                         <div class="courses__details-enroll">
-                            <div class="tg-button-wrap">
-                                <a href="courses.html" class="btn btn-two arrow-btn">
-                                    See All Instructors
-                                    <img src="/frontend/assets/img/icons/right_arrow.svg" alt="img"
-                                        class="injectable">
-                                </a>
-                            </div>
+                            <a href="/checkout" class="btn btn-two arrow-btn w-100">
+                                Enroll Now
+                                <img src="/frontend/assets/img/icons/right_arrow.svg" class="injectable">
+                            </a>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

@@ -273,6 +273,27 @@ class PermissionSeeder extends Seeder
         //         ],
         //     ]
         // ],
+        'Coupon' => [
+            'controller' => 'Admin\CouponController',
+            'permissions' => [
+                'coupon-view' => [
+                    'index',
+                    'data',
+                    'list',
+                    'show',
+                ],
+                'coupon-store' => [
+                    'create',
+                    'store',
+                ],
+                'coupon-update' => [
+                    'edit',
+                    'update',
+                    'changeStatus',
+                    'changeHomeFeaturedStatus',
+                ],
+            ]
+        ],
         'Course' => [
             'controller' => 'Admin\CourseController',
             'permissions' => [
@@ -378,6 +399,11 @@ class PermissionSeeder extends Seeder
             'course-store',
             'course-update',
             'course-destroy',
+
+            #coupon
+            'coupon-view',
+            'coupon-store',
+            'coupon-update',
 
             //End of Role Permission
         ],

@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CrudController;
 use App\Http\Controllers\Admin\IconController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\CouponController;
+use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\EnquiryController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -23,7 +25,6 @@ use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\RazorpayPaymentController;
 use App\Http\Controllers\Admin\ItemcategoryController;
-use App\Http\Controllers\Auth\LoginController;
 
 //End of use statements
 
@@ -132,6 +133,13 @@ Route::middleware(['auth', 'admin', 'preventBackHistory'])->group(function () {
         Route::post('courses/list', [CourseController::class, 'list'])->name('courses.list');
         Route::post('courses/change-status', [CourseController::class, 'changeStatus'])->name('courses.change.status');
 
+
+        // Coupon
+        Route::resource('coupons', CouponController::class);
+        Route::post('coupons/data', [CouponController::class, 'data'])->name('coupons.data');
+        Route::post('coupons/list', [CouponController::class, 'list'])->name('coupons.list');
+        Route::post('coupons/change-home_featured-status', [CouponController::class, 'changeHomeFeaturedStatus'])->name('coupons.change.home_featured.status');
+        Route::post('coupons/change-status', [CouponController::class, 'changeStatus'])->name('coupons.change.status');
 
 
         //End of File

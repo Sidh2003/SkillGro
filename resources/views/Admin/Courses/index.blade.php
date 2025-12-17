@@ -32,7 +32,7 @@
                     <!-- Header -->
                     <div class="card-header px-4 py-3 border-bottom">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="card-title fw-semibold mb-0 lh-sm">Courses</h5>
+                            <h5 class="card-title fw-semibold mb-0">Courses</h5>
                             <a href="{{ route('admin.courses.create') }}" class="btn btn-info">
                                 Create <i class="ti ti-plus"></i>
                             </a>
@@ -82,14 +82,14 @@
 
                     <!-- Table -->
                     <div class="card-body p-4">
-                        <div class="table-responsive rounded-2 mb-4">
-                            <table class="table table-bordered table-sm text-nowrap mb-0 align-middle" id="datatable">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm text-nowrap align-middle" id="datatable">
                                 <thead class="text-dark fs-3">
                                     <tr>
-                                        <th width="3%">#</th>
-                                        <th width="5%">Edit</th>
-                                        <th width="5%">Status</th>
-                                        <th width="8%">Photo</th>
+                                        <th>#</th>
+                                        <th>Edit</th>
+                                        <th>Status</th>
+                                        <th>Photo</th>
                                         <th>Title</th>
                                         <th>Category</th>
                                         <th>Slug</th>
@@ -100,9 +100,7 @@
                                         <th>Home Featured</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <!-- DataTable -->
-                                </tbody>
+                                <tbody></tbody>
                             </table>
                         </div>
                     </div>
@@ -112,19 +110,6 @@
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Course Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body" id="modalBody"></div>
-            </div>
-        </div>
-    </div>
-
     <script>
         $(document).ready(function() {
 
@@ -132,7 +117,7 @@
                 width: '100%'
             });
 
-            let dataTable = $('#datatable').DataTable({
+            let table = $('#datatable').DataTable({
                 dom: "Bfrtip",
                 buttons: ["copy", "csv", "excel", "pdf", "print"],
                 processing: true,
@@ -155,10 +140,12 @@
                     },
                     {
                         data: 'action',
+                        orderable: false,
                         searchable: false
                     },
                     {
                         data: 'status',
+                        orderable: false,
                         searchable: false
                     },
                     {
@@ -194,49 +181,48 @@
                 ],
                 columnDefs: [{
                     targets: [0, 1, 2],
-                    className: "text-center"
+                    className: 'text-center'
                 }]
             });
 
-            // Redraw on filter change
+            // Filters
             $('#category_id, #status, #level').on('change', function() {
-                dataTable.draw();
+                table.draw();
             });
 
             $('#title_search').on('keyup', function() {
-                dataTable.draw();
+                table.draw();
             });
 
-            // Status Toggle
+            // Status Toggle (FIXED)
             $(document).on('change', '.course-status-switch', function() {
+                let id = $(this).data('id');
+
                 $.post("{{ route('admin.courses.change.status') }}", {
                     _token: $('meta[name=csrf-token]').attr('content'),
-                    route_key: $(this).data('routekey'),
-                    column: $(this).data('column'),
+                    id: id,
                     status: $(this).is(':checked') ? 'ACTIVE' : 'INACTIVE'
                 }, function(res) {
                     toastr.success(res.message);
+                }).fail(function(xhr) {
+                    toastr.error(xhr.responseJSON.message);
                 });
             });
 
             // Delete Course
             $(document).on('click', '.delete-course', function() {
-                let routeKey = $(this).data('routekey');
+                let id = $(this).data('id');
 
                 if (confirm('Are you sure you want to delete this course?')) {
                     $.ajax({
-                        url: `/admin/courses/${routeKey}`,
+                        url: `/admin/courses/${id}`,
                         type: 'DELETE',
                         data: {
                             _token: $('meta[name=csrf-token]').attr('content')
                         },
                         success: function(res) {
-                            if (res.status === 'success') {
-                                toastr.success(res.message);
-                                dataTable.ajax.reload();
-                            } else {
-                                toastr.error(res.message);
-                            }
+                            toastr.success(res.message);
+                            table.ajax.reload();
                         }
                     });
                 }

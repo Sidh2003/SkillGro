@@ -15,10 +15,12 @@ Route::get('/about', function () {
 
 Route::get('/courses', [HomeController::class, 'courses'])->name('courses');
 
+Route::get('/course/{slug}', [HomeController::class, 'course_details'])
+    ->name('course.details');
 
-Route::get('/course_details', function () {
-    return view('Frontend.course_details');
-})->name('course_details');
+Route::get('/checkout', function () {
+    return view('Frontend.checkout');
+})->name('checkout');
 
 Route::get('/blogs', function () {
     return view('Frontend.blogs');

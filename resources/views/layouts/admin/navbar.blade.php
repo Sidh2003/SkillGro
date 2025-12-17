@@ -126,6 +126,33 @@
             </li>
         @endcan
 
+
+        @can('coupon-view')
+            <li class="sidebar-item">
+                <a class="sidebar-link @if (Route::is('admin.coupons.*')) active @endif"
+                    href="{{ route('admin.coupons.index') }}" aria-expanded="false">
+                    <span>
+                        <i class="ti ti-ticket"></i>
+                    </span>
+                    <span class="hide-menu">Coupon Codes</span>
+                </a>
+            </li>
+        @endcan
+
+
+
+        @can('order-view')
+            <li class="sidebar-item">
+                <a class="sidebar-link @if (Route::is('admin.orders.*')) active @endif"
+                    href="{{ route('admin.orders.index') }}" aria-expanded="false">
+                    <span>
+                        <i class="ti ti-shopping-cart"></i>
+                    </span>
+                    <span class="hide-menu">Orders</span>
+                </a>
+            </li>
+        @endcan
+
         {{-- @can('setting-view')
             <li class="sidebar-item">
                 <a class="sidebar-link @if (Route::is('admin.settings.*')) active @endif"
@@ -138,17 +165,6 @@
             </li>
         @endcan --}}
 
-        @can('setting-view')
-            <li class="sidebar-item">
-                <a class="sidebar-link @if (Route::is('admin.orders.*')) active @endif"
-                    href="{{ route('admin.orders.index') }}" aria-expanded="false">
-                    <span>
-                        <i class="ti ti-shopping-cart"></i>
-                    </span>
-                    <span class="hide-menu">Orders</span>
-                </a>
-            </li>
-        @endcan
 
         <!-- End of File -->
     </ul>

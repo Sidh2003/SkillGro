@@ -25,12 +25,11 @@ class HomeController extends Controller
     }
     public function courses(Request $request)
     {
-        // Filters from URL
         $categorySlug = $request->category;
         $level = $request->level;
         $language = $request->language;
 
-        // Base query
+        // Base query → ONLY ACTIVE COURSES
         $coursesQuery = Course::with('category')
             ->where('status', 'ACTIVE');
 
@@ -42,7 +41,7 @@ class HomeController extends Controller
             }
         }
 
-        // Skill level filter
+        // Level filter
         if ($level) {
             $coursesQuery->where('level', $level);
         }
@@ -52,18 +51,24 @@ class HomeController extends Controller
             $coursesQuery->where('language', $language);
         }
 
-        // Fetch courses
+        // Fetch ACTIVE courses only
         $courses = $coursesQuery->latest()->get();
 
-        // Sidebar data
-        $categories = Category::withCount('courses')->get();
+        // Sidebar categories → count ONLY ACTIVE courses
+        $categories = Category::withCount([
+            'courses' => function ($q) {
+                $q->where('status', 'ACTIVE');
+            }
+        ])->get();
 
-        $levels = Course::select('level')
+        // Sidebar levels → from ACTIVE courses only
+        $levels = Course::where('status', 'ACTIVE')
             ->whereNotNull('level')
             ->distinct()
             ->pluck('level');
 
-        $languages = Course::select('language')
+        // Sidebar languages → from ACTIVE courses only
+        $languages = Course::where('status', 'ACTIVE')
             ->whereNotNull('language')
             ->distinct()
             ->pluck('language');
@@ -76,9 +81,19 @@ class HomeController extends Controller
         ));
     }
 
-    public function course_details(Request $request)
+
+    public function course_details($slug)
     {
-        return view('Frontend.course_details');
+        $course = Course::where('slug', $slug)
+            ->where('status', 'ACTIVE')
+            ->firstOrFail(); // 404 if not found
+
+        return view('Frontend.course_details', compact('course'));
+    }
+
+    public function checkout()
+    {
+        return view('Frontend.checkout');
     }
 
     public function contact()

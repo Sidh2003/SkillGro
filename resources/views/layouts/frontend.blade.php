@@ -92,7 +92,7 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="#0"><img src="/frontend/assets/img/logo/logo.svg" alt="Logo"></a>
+                                    <a href="/"><img src="/frontend/assets/img/logo/logo.svg" alt="Logo"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                     <ul class="navigation">
@@ -214,7 +214,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="footer__widget">
                             <div class="logo mb-35">
-                                <a href="#0"><img src="/frontend/assets/img/logo/secondary_logo.svg"
+                                <a href="/"><img src="/frontend/assets/img/logo/secondary_logo.svg"
                                         alt="img"></a>
                             </div>
                             <div class="footer__content">

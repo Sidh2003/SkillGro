@@ -66,7 +66,7 @@
                                 </div>
                             </div>
 
-                            <!-- Language (STATIC) -->
+                            <!-- Language -->
                             <div class="courses-widget">
                                 <h4 class="widget-title">Language</h4>
                                 <div class="courses-cat-list">
@@ -74,7 +74,6 @@
                                         @php
                                             $languages = ['All', 'English', 'Hindi', 'Marathi'];
                                         @endphp
-
                                         @foreach ($languages as $lang)
                                             <li>
                                                 <div class="form-check">
@@ -92,7 +91,7 @@
                                 </div>
                             </div>
 
-                            <!-- Skill Level (STATIC) -->
+                            <!-- Skill Level -->
                             <div class="courses-widget">
                                 <h4 class="widget-title">Skill Level</h4>
                                 <div class="courses-cat-list">
@@ -100,7 +99,6 @@
                                         @php
                                             $skills = ['All', 'Beginner', 'Intermediate', 'Advanced'];
                                         @endphp
-
                                         @foreach ($skills as $skill)
                                             <li>
                                                 <div class="form-check">
@@ -142,7 +140,7 @@
                             <div class="col">
                                 <div class="courses__item shine__animate-item">
                                     <div class="courses__item-thumb">
-                                        <a href="#">
+                                        <a href="{{ route('course.details', $course->slug) }}">
                                             @if ($course->photo)
                                                 <img src="{{ Storage::url($course->photo) }}" alt="{{ $course->title }}">
                                             @else
@@ -159,7 +157,9 @@
                                         </ul>
 
                                         <h5 class="title">
-                                            {{ $course->title }}
+                                            <a href="{{ route('course.details', $course->slug) }}">
+                                                {{ $course->title }}
+                                            </a>
                                         </h5>
 
                                         <p class="author">
@@ -168,7 +168,7 @@
 
                                         <div class="courses__item-bottom">
                                             <div class="button">
-                                                <a href="#">
+                                                <a href="{{ route('course.details', $course->slug) }}">
                                                     <span class="text">Enroll Now</span>
                                                     <i class="flaticon-arrow-right"></i>
                                                 </a>
