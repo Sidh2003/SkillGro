@@ -20,48 +20,30 @@ class OrderController extends Controller
     {
         $query = Order::query();
 
-        // Dynamic filtering based on request parameters
-        if ($request->has('customer_id')) {
-            $query->where('customer_id', $request->customer_id);
-        }
-
-        if ($request->has('status')) {
-            $query->where('status', $request->status);
-        }
-
         return DataTables::eloquent($query)
-            ->editColumn('first_name', function ($order) {
-                return $order->first_name;
+            ->editColumn('full_name', function ($order) {
+                return $order->full_name;
             })
-            ->editColumn('customer_id', function ($order) {
-                return $order->customer_id;
+            ->editColumn('mobile', function ($order) {
+                return $order->mobile;
             })
-            ->editColumn('number', function ($order) {
-                return $order->number;
+            ->editColumn('email', function ($order) {
+                return $order->email;
             })
-            ->editColumn('service_id', function ($order) {
-                return $order->service_id;
+            ->editColumn('coupon_code', function ($order) {
+                return $order->coupon_code;
             })
-            ->editColumn('type', function ($order) {
-                return $order->type;
+            ->editColumn('price', function ($order) {
+                return $order->price;
             })
-            ->editColumn('customer_addresses_id', function ($order) {
-                return $order->customer_addresses_id;
-            })
-            ->editColumn('final_amount', function ($order) {
-                return $order->final_amount;
-            })
-            ->editColumn('description', function ($order) {
-                return $order->description;
-            })
-            ->editColumn('vendor_id', function ($order) {
-                return $order->vendor_id;
+            ->editColumn('course_name', function ($order) {
+                return $order->course_name;
             })
             ->editColumn('razorpay_order_id', function ($order) {
                 return $order->razorpay_order_id;
             })
             ->addIndexColumn()
-            ->rawColumns(['first_name', 'customer_id', 'service_id', 'type', 'customer_addresses_id', 'final_amount', 'description', 'vendor_id', 'razorpay_order_id'])
+            ->rawColumns(['full_name', 'mobile', 'email', 'coupon_code', 'price', 'course_name', 'razorpay_order_id'])
             ->setRowId('id')
             ->make(true);
     }
@@ -85,7 +67,7 @@ class OrderController extends Controller
     // Store new order in database
     public function store(Request $request)
     {
-       //
+        //
     }
 
     // Show order details for editing
@@ -98,18 +80,18 @@ class OrderController extends Controller
     // Show edit form
     public function edit($id)
     {
-       //
+        //
     }
 
     // Update an existing order
     public function update(Request $request, $id)
     {
-       //
+        //
     }
 
     // Delete an order
     public function destroy($id)
     {
-       //
+        //
     }
 }

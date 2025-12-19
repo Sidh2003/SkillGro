@@ -11,7 +11,7 @@ class Course extends BaseModel
 {
     protected $fillable = [
         'category_id',
-        'title',
+        'course_name',
         'slug',
         'price',
         'teacher',

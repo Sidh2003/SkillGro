@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
+use App\Models\Order;
 use App\Mail\Thankyou;
-use App\Models\Enquiry;
 use App\Models\Course;
+use App\Models\Enquiry;
 use App\Models\Category;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class HomeController extends Controller
 
         // Base query → ONLY ACTIVE COURSES
         $coursesQuery = Course::with('category')
-            ->where('status', 'ACTIVE');
+            ->where('status', 'ACcVE');
 
         // Category filter
         if ($categorySlug) {
@@ -163,6 +164,7 @@ class HomeController extends Controller
         return view('Frontend.thankyou');
     }
 
+
     public function contactEnquiry(Request $request)
     {
         // Validation rules with Google reCAPTCHA instead of custom captcha
@@ -199,4 +201,40 @@ class HomeController extends Controller
 
         return response()->json(['status' => 'success', 'message' => 'Enquiry Sent Successfully']);
     }
+
+
+
+    public function PaymentStore(Request $request)
+    {
+        // Validation rules with Google reCAPTCHA instead of custom captcha
+        $rules = [
+            'full_name' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required|digits:10',
+        ];
+
+        $messages = [
+            'full_name.required' => 'Your Full Name is required',
+            'email.required' => 'Email is required',
+            'email.email' => 'Email should be a valid email',
+            'mobile.required' => 'The mobile number field is required.',
+            'mobile.digits' => 'The mobile number must be exactly 10 digits.',
+        ];
+
+        $request->validate($rules, $messages);
+
+
+        // Save enquiry
+        $enquiry = new Order();
+        $enquiry->full_name = $request->full_name;
+        $enquiry->mobile = $request->mobile;
+        $enquiry->email = $request->email;
+        $enquiry->save();
+
+        Mail::to('siddhesh.sonavane024@gmail.com')->send(new ContactMail($enquiry));
+        Mail::to($request->email)->send(new Thankyou($enquiry));
+
+        return response()->json(['status' => 'success', 'message' => 'Enquiry Sent Successfully']);
+    }
+
 }

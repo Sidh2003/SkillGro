@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title')
-    {{ $course->title }} | SkillGro
+    {{ $course->course_name }} | SkillGro
 @endsection
 
 @section('content')
@@ -20,13 +20,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb__content">
-                        <h3 class="title">{{ $course->title }}</h3>
+                        <h3 class="title">{{ $course->course_name }}</h3>
                         <nav class="breadcrumb">
                             <a href="{{ url('/') }}">Home</a>
                             <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
                             <a href="{{ route('courses') }}">Courses</a>
                             <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
-                            <span>{{ $course->title }}</span>
+                            <span>{{ $course->course_name }}</span>
                         </nav>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     <div class="courses__details-thumb mb-4"
                         style="width:100%; max-width:1049px; aspect-ratio:1049/570; overflow:hidden;">
                         <img src="{{ $course->photo ? asset('storage/' . $course->photo) : asset('frontend/assets/img/courses/courses_details.jpg') }}"
-                            alt="{{ $course->title }}" style="width:100%; height:100%; object-fit:cover;">
+                            alt="{{ $course->course_name }}" style="width:100%; height:100%; object-fit:cover;">
                     </div>
 
 
@@ -62,7 +62,7 @@
                             </li>
                         </ul>
 
-                        <h2 class="title mb-3">{{ $course->title }}</h2>
+                        <h2 class="title mb-3">{{ $course->course_name }}</h2>
 
                         <div class="courses__details-meta mb-4">
                             <ul class="list-wrap">

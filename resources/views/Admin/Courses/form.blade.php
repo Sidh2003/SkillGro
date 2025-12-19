@@ -44,12 +44,12 @@
                                 <div id="category_id-error" class="text-danger mt-1"></div>
                             </div>
 
-                            <!-- Title -->
+                            <!-- Course Name -->
                             <div class="col-md-6 mb-3">
-                                <label>Title <sup class="text-danger">*</sup></label>
-                                <input type="text" class="form-control" name="title" id="title"
-                                    value="{{ $course->title ?? '' }}" placeholder="Course title...">
-                                <div id="title-error" class="text-danger mt-1"></div>
+                                <label>Course Name <sup class="text-danger">*</sup></label>
+                                <input type="text" class="form-control" name="course_name" id="course_name"
+                                    value="{{ $course->course_name ?? '' }}" placeholder="Course Name...">
+                                <div id="course_name-error" class="text-danger mt-1"></div>
                             </div>
 
                             <!-- Slug -->
@@ -355,7 +355,7 @@
         });
 
         /* Auto Slug */
-        $('#title').keyup(function() {
+        $('#course_name').keyup(function() {
             $('#slug').val($(this).val().toLowerCase().replace(/ /g, '-'));
         });
     </script>

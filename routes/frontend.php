@@ -79,4 +79,6 @@ Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
 
 Route::post('/contact-enquiry', [HomeController::class, 'contactEnquiry'])->name('contact-enquiry');
 
+Route::post('/paymentstore', [HomeController::class, 'PaymentStore'])->name('payment.store');
+
 

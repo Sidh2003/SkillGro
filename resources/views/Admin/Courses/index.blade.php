@@ -90,7 +90,7 @@
                                         <th>Edit</th>
                                         <th>Status</th>
                                         <th>Photo</th>
-                                        <th>Title</th>
+                                        <th>Course Name</th>
                                         <th>Category</th>
                                         <th>Slug</th>
                                         <th>Price</th>
@@ -154,7 +154,7 @@
                         searchable: false
                     },
                     {
-                        data: 'title'
+                        data: 'course_name'
                     },
                     {
                         data: 'category',

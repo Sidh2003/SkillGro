@@ -41,8 +41,8 @@ class CourseController extends Controller
             $query->where('level', $request->level);
         }
 
-        if ($request->filled('title_search')) {
-            $query->where('title', 'like', '%' . $request->title_search . '%');
+        if ($request->filled('course_name_search')) {
+            $query->where('course_name', 'like', '%' . $request->course_name_search . '%');
         }
 
         $query->orderByDesc('id');
@@ -99,7 +99,7 @@ class CourseController extends Controller
     {
         $validated = $request->validate([
             'category_id' => 'required|exists:categories,id',
-            'title' => 'required|string|max:255',
+            'course_name' => 'required|string|max:255',
             'slug' => 'nullable|alpha_dash|unique:courses,slug',
             'price' => 'nullable|numeric',
             'teacher' => 'nullable|string|max:255',
@@ -121,7 +121,7 @@ class CourseController extends Controller
         $course->fill($validated);
 
         if (!$course->slug) {
-            $course->slug = Str::slug($course->title) . '-' . Str::random(6);
+            $course->slug = Str::slug($course->course_name) . '-' . Str::random(6);
         }
 
         if ($request->hasFile('photo')) {
@@ -157,7 +157,7 @@ class CourseController extends Controller
     {
         $validated = $request->validate([
             'category_id' => 'required|exists:categories,id',
-            'title' => 'required|string|max:255',
+            'course_name' => 'required|string|max:255',
             'slug' => 'nullable|alpha_dash|unique:courses,slug,' . $course->id,
             'price' => 'nullable|numeric',
             'teacher' => 'nullable|string|max:255',
@@ -178,7 +178,7 @@ class CourseController extends Controller
         $course->fill($validated);
 
         if (!$course->slug) {
-            $course->slug = Str::slug($course->title) . '-' . Str::random(6);
+            $course->slug = Str::slug($course->course_name) . '-' . Str::random(6);
         }
 
         if ($request->hasFile('photo')) {
